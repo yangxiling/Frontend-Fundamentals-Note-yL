@@ -1,4 +1,4 @@
-//希尔排序
+//希尔排序  插入排序的一种更高效的改进版本
 function shellSort(arr) {
   var len = arr.length,
       temp,
@@ -19,3 +19,5 @@ function shellSort(arr) {
   return arr;
 }
 // shellSort([2,6,9,8,0,7,6,5,4,4,4])
+//时间复杂度O(nlogn)
+//空间复杂度O(1)

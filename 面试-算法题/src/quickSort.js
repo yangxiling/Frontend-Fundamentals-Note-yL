@@ -14,6 +14,25 @@ function qSort(arr) {
   return qSort(left).concat(pivot, qSort(right))
 }
 // qSort([5,3, 29, 10, 14,])
+//三数取中 方法
+function getMediam(arr, l, pivot, right) {
+  let temp = arr[pivot];
+  // 找中值
+  if (arr[pivot] < arr[l] && arr[pivot] < arr[r]) { //取第二小
+    if (arr[l] <= arr[r]) {
+      pivot = l;
+    } else {
+      pivot = r;
+    }
+  } else if (arr[pivot] > arr[l] && arr[pivot] > arr[r]) { //取第二大
+    if (arr[l] >= arr[r]) {
+      pivot = l;
+    } else {
+      pivot = r;
+    }
+  }
+  return arr[pivot];
+}
 
 //快排迭代
 function qSort(arr, left = 0, right = arr.length - 1) {
