@@ -1,4 +1,4 @@
-//选择排序
+//选择排序  每一轮选中谁（这一轮中包括自己最小的数）和谁换位置
 function selectionSort(arr) {
   for (let o = 0; o < arr.length-1; o++) {
     let min =o;
@@ -14,3 +14,6 @@ function selectionSort(arr) {
     }
   }
 }
+//时间复杂度O(n²)
+//空间复杂度O(1)
+//不稳定

@@ -1,0 +1,127 @@
+1.JavaScript：一个完整的JavaScript实现应该由下列三个不同的部分组成。
+
+<img src="/Users/yl/Library/Application Support/typora-user-images/image-20201123140349176.png" alt="image-20201123140349176" style="zoom: 50%;" />
+
+* 核心（ECMAScript）
+* 文档对象模型（DOM）
+* 浏览器对象模型（BOM）
+
+2.所谓__标识符__，就是指变量、函数、属性的名字，或者函数的参数。
+
+ 第一个字符必须是一个字母、下划线(_)或一个美元符号($);
+
+ 其他字符可以是字母、下划线、美元符号或数字。
+
+3.:question:1.const、let、var关键字区别？
+
+&emsp;:pencil2:A: 
+
+- let和var的作用差不多。
+
+区别：1.let声明的变量是块作用域，var声明的变量是函数作用域。var会有声明变量提升，let声明的变量不会在作用域中提升。
+
+2.全局声明：使用let在全局作用域声明的变量不会成为window属性（var声明的则会成为window对象的属性）
+
+- const行为和let基本相同。唯一重要的区别是const声明变量时，必须同时初始化变量。且尝试修改const声明的变量会导致错误。
+
+__声明的最佳实践风格就是: 不使用var。const优先，let次之__
+
+4.typeof 操作符：返回“object”表示返回的值为 对象 或 null；
+
+其他数据类型返回值一一对应。
+
+<span style="background:red">window ---> document ---> html --->  body --->  Element</span>
+
+- 如果想获取 `body` 节点，方法是：`document.body`；
+- 但是，如果想获取 `html`节点，方法是`document.documentElement`
+
+* <span style="color:blue">生成函数的三种方法:</span>
+
+1.函数声明：function fun() {}
+
+2.函数表达式：let obj = function () {}
+
+3.构造函数：let fun = new function()
+
+* 类数组arguments：
+
+在调用函数时，浏览器每次都会传递进来两个隐含的参数：
+
+1.函数的上下文对象 this
+
+2.封装实参的对象 arguments
+
+arguments是类数组对象，它可以通过索引来操作数据，也可以获取长度。
+
+arguments代表的是实参。在调用函数时，我们所传递的实参都会在arguments中保存。有个讲究的地方是：arguments**只在函数中使用**。
+
+1.(**arguments.length**)
+
+2.**返回正在执行的函数：arguments.callee**
+
+3.**arguments可以修改元素**
+
+之所以说arguments是伪数组，是因为：**arguments可以修改元素，但不能改变数组的长度**
+
+* call，apply，bind
+
+function.call(obj, argument[0],argument[1]...)
+
+function.apply(obj,[argument[0],argument[1]...])
+
+function.bind(obj,argument[0],argument[1]...)()
+
+**1.function中的this指向obj**
+
+**2.argument是function的参数**
+
+3.bind返回的是一个函数，所以要加（）
+
+* 同源策略
+
+  <font color=blue>协议相同、域名相同、端口相同</font>
+
+  举例来说，<span style ="background:pink">`http://www.example.com/dir/page.html`</span>这个网址，<span style="background:red">协议是`http://`，域名是`www.example.com`，端口是`80`（默认端口可以省略）</span>。
+
+#### webpack打包注意事项：
+
+dev：webpack  --config  webpack.config.js  //会生成dist目录
+
+
+
+dev：webpack-dev-server  --config 
+
+webpack.config.js //不会生成dist目录
+
+
+
+rpx:是响应式开发   像素
+
+<span style="color:deeppink">技巧：控制台  $0 可以直接获取到当前节点</span>
+
+<font color=blue>**原型链：**原型链其实是一个链表   原型链的_ _proto_ _相当于链表的next指针</font>
+
+<font color =red>obj._ _proto_ _ === obj.prototype</font>
+
+<font color=red>**instanceof 用法：**（ 实例  instanceof  ptototype【数据类型】）用于检测某个   prototype属性  是否出现在     实例的原型链上</font>
+
+通过判断这个实例的原型链上   是否能找到这个   属性(数据类型)
+
+Object  ——> Object.prototype ——> null
+
+function ——> Fuction.prototype  ——> Object.prototype  ——> null
+
+arr  ——> Array.prototype  ——> Object.prototype  ——> null
+
+String、Boolean、Number 、Symbol  的原链以此类推。
+
+**for...of 和for....in 区别？**
+
+1.for..of遍历获取的是 对象键值 ，for...in遍历获取的是   对象键名
+
+2.for..in会遍历整个对象原型链  性能非常差不推荐使用，  而for...of只遍历当前对象
+
+3–对于数组的遍历,for … in会返回数组中所有可枚举的属性(包括原型链上可枚举的属性),for … of只返回数组的下标对应的属性值
+
+for … of循环的原理其实也是利用了遍历对象内部的iterator接口,将for … of循环分解成最原始的for循环
+
