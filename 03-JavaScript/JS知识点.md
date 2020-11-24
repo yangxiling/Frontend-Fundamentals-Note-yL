@@ -8,13 +8,12 @@
 
 2.所谓__标识符__，就是指变量、函数、属性的名字，或者函数的参数。
 
- 第一个字符必须是一个字母、下划线(_)或一个美元符号($);
+*  第一个字符必须是一个字母、下划线(_)或一个美元符号($);
 
- 其他字符可以是字母、下划线、美元符号或数字。
+*  其他字符可以是字母、下划线、美元符号或数字。
+* 
 
-3.:question:1.const、let、var关键字区别？
-
-&emsp;:pencil2:A: 
+3.​​1.const、let、var关键字区别？
 
 - let和var的作用差不多。
 
@@ -30,12 +29,22 @@ __声明的最佳实践风格就是: 不使用var。const优先，let次之__
 
 其他数据类型返回值一一对应。
 
+5.symbol：<span style="color:red">symbol值作为对象属性时，不能使用点运算符读取，只能用[]方括号读取。在对象的内部，使用 Symbol 值定义属性时，Symbol 值必须放在方括号之中。</span>
+
+一个新的 API，`Reflect.ownKeys()`方法可以返回所有类型的键名，包括常规键名和 Symbol 键名。
+
+6.Array数组的indexOf、includes  vs  for-loop性能比较：
+
+数组includes方法的性能实现原理是while循环，和indexOf（内部也是while循环）实现原理大同小异，效率差相当。都没有直接for···loop性能好，因为for···loop没有前置判断和浏览器对它的优化。
+
+
+
 <span style="background:red">window ---> document ---> html --->  body --->  Element</span>
 
 - 如果想获取 `body` 节点，方法是：`document.body`；
 - 但是，如果想获取 `html`节点，方法是`document.documentElement`
 
-* <span style="color:blue">生成函数的三种方法:</span>
+<span style="color:blue">生成函数的三种方法:</span>
 
 1.函数声明：function fun() {}
 
