@@ -190,7 +190,7 @@ POST方式请求：浏览器会先发送header，服务器返回100  continue，
 
 &emsp;:pencil2: A：[图解链接](https://www.jianshu.com/p/d3725391af59)
 
-<img src="/Users/yl/Library/Application Support/typora-user-images/image-20201125150202757.png" alt="image-20201125150202757" style="zoom: 80%;" />![image-20201125150746526](/Users/yl/Library/Application Support/typora-user-images/image-20201125150746526.png)
+<img src="./src/imgs/Tcp.png" alt="image-Tcp" style="zoom: 80%;" />![image](./src/imgs/Tcp1.png)
 
 <img src="/Users/yl/Library/Application Support/typora-user-images/image-20201125150825176.png" alt="image-20201125150825176" style="zoom: 50%;" />
 
@@ -226,9 +226,9 @@ function fn(data){
 
 :question:readyState 的不同返回值有什么区别？&emsp;:pencil2: A：
 
-![这里写图片描述](https://img-blog.csdn.net/20170320212200880?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd29wZWxv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+![image](./src/imgs/post.png)
 
-![image-20201125163834894](/Users/yl/Library/Application Support/typora-user-images/image-20201125163834894.png)
+![image](./src/imgs/readyState.png)
 
 XMLHttpRequest.open()方法初始化一个请求。
 
