@@ -37,6 +37,22 @@ __声明的最佳实践风格就是: 不使用var。const优先，let次之__
 
 数组includes方法的性能实现原理是while循环，和indexOf（内部也是while循环）实现原理大同小异，效率差相当。都没有直接for···loop性能好，因为for···loop没有前置判断和浏览器对它的优化。
 
+### 6、json.parse：解析字符串
+
+### json.stringify：将对象转化为字符串
+
+<font color="blue">深拷贝方法：json.parse(json.stringify(Obj))</font>
+
+<font color="blue">缺点：不能解析 undefined和函数。无法解决循环引用的问题。</font>
+
+<font color="deeppink">可以通过 for...in遍历对象，实现深拷贝。</font>
+
+
+
+
+
+
+
 
 
 <span style="background:red">window ---> document ---> html --->  body --->  Element</span>
@@ -108,13 +124,15 @@ rpx:是响应式开发   像素
 
 <span style="color:deeppink">技巧：控制台  $0 可以直接获取到当前节点</span>
 
+### 构造函数、原型和实例的关系
+
+<font color=blue>每一个构造函数都有一个原型。原型中有一个属性指回构造函数。实例中有一个内部指针指向原型。</font>
+
 <font color=blue>**原型链：**原型链其实是一个链表   原型链的_ _proto_ _相当于链表的next指针</font>
 
 <font color =red>obj._ _proto_ _ === obj.prototype</font>
 
-<font color=red>**instanceof 用法：**（ 实例  instanceof  ptototype【数据类型】）用于检测某个   prototype属性  是否出现在     实例的原型链上</font>
-
-通过判断这个实例的原型链上   是否能找到这个   属性(数据类型)
+<font color=red>如果一个实例的   原型中   出现过相应的  构造函数，那么instanceof 就会返回true。</font>
 
 Object  ——> Object.prototype ——> null
 
