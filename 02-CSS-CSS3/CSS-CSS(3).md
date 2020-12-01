@@ -10,7 +10,11 @@
 
 ##### 2.颜色相关
 
-  background-image:    渐变色彩
+  background-image:   
+
+ 渐变色彩
+
+background：线性 (由 [`linear-gradient`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/linear-gradient) 函数创建)，径向(由 [`radial-gradient()`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/radial-gradient) 函数创建) 和圆锥 (由 [`conic-gradient`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/conic-gradient) 函数创建)
 
 ##### 3.文字与字体
 

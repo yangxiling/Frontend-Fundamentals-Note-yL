@@ -13,8 +13,8 @@
 * ​        unicode-bidi：设置文本的方向
 
 ​    3、盒子模型的属性：width、height、margin 、margin-top、margin-right、margin-bottom、margin-left
-​    4、背景属性：background、background-color、background-image、background-repeat、background-position、background-attachment
-​    5、定位属性：float、clear、position、top、right、bottom、left、min-width、min-height、max-width、max-height、overflow、clip、z-index
+​    4、背景属性：background、background-color、background-image、background-repeat、
+​    5、定位属性：float、clear、position、top、right、bottom、left、-width、overflow、z-index
 ​    6、生成内容属性：content、counter-reset、counter-increment
 ​    7、轮廓样式属性：outline-style、outline-width、outline-color、outline
 ​    8、页面样式属性：size、page-break-before、page-break-after
@@ -61,4 +61,44 @@
 
 五、块级元素可以继承的属性
     1、text-indent、text-align
+
+### CSS3 如何实现渐变色？
+
+:pencil2:A: background：线性 (由 [`linear-gradient`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/linear-gradient) 函数创建)，径向(由 [`radial-gradient()`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/radial-gradient) 函数创建) 和圆锥 (由 [`conic-gradient`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/conic-gradient) 函数创建)
+
+### :question: 简述 CSS 盒模型
+
+:pencil2:A: 通过box-sizing：border-box|content-box  来转换两种盒模型。
+
+一般再自适应布局的时候，元素设置了padding的时候会撑破布局，就会用到border-box.s
+
+**标准盒模型：width/height==>padding==>border> margin**
+
+### :question:定位
+
+:pencil2:A: sticky：粘性定位可以被认为是相对定位和固定定位的混合。元素在跨越特定阈值前为相对定位，之后为固定定位
+
+### :question:如何实现 div 元素水平垂直居中
+
+[:pencil2:A: 水平垂直居中](./src/position.html)
+
+### :question:如何使用 flex 实现两栏布局？
+
+```
+.container{
+	display:flex;
+}
+.container .box1{
+	width:50%;
+	height:100px;
+}
+.container .box2{
+	flex:1;
+	height:100px;
+}
+```
+
+### :question:实现三栏布局？
+
+[float、position、flex、grid](./src/threePart.html)
 

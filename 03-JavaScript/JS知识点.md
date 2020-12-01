@@ -25,7 +25,7 @@
 
 __声明的最佳实践风格就是: 不使用var。const优先，let次之__
 
-4.typeof 操作符：返回“object”表示返回的值为 对象 或 null；
+**4.typeof 操作符：返回“object”表示返回的值为 对象 或 null；****
 
 其他数据类型返回值一一对应。
 
@@ -49,7 +49,11 @@ __声明的最佳实践风格就是: 不使用var。const优先，let次之__
 
 
 
+### call\apply\bind
 
+call就是Function.prototype.call。就是仔函数的原型上写了一个方法函数叫call。他内部实现是让当前执行环境的上下文的this指向另一个指定的对象。agrs是作为当前function的参数。
+
+function.call(<font color=red>obj</font>,num1num2....)
 
 
 

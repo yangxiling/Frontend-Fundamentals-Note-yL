@@ -381,3 +381,72 @@ Prettier：格式化 和ESLint使用时要配置一下，防止有些功能冲�
 * jest 或 macha
 * @vue/test-utils
 * sinon
+
+
+
+### VDOM
+
+<font color=blue>vdim：用js模拟DOM结构，计算出最小的变量，操作DOM</font>
+
+![image-20201129202944920](/Users/yl/Library/Application Support/typora-user-images/image-20201129202944920.png)
+
+Vue参考的Snabbdom库实现的 vdom和diff
+
+* diff算法再日常使用中能体现出来（如key）
+* <img src="/Users/yl/Library/Application Support/typora-user-images/image-20201129203909887.png" alt="image-20201129203909887" style="zoom: 50%;" />
+* ![image-20201129212853250](/Users/yl/Library/Application Support/typora-user-images/image-20201129212853250.png)
+
+![image-20201129204301515](/Users/yl/Library/Application Support/typora-user-images/image-20201129204301515.png)
+
+![image-20201129204559897](/Users/yl/Library/Application Support/typora-user-images/image-20201129204559897.png)
+
+![image-20201129214307770](/Users/yl/Library/Application Support/typora-user-images/image-20201129214307770.png)
+
+![image-20201129212605338](/Users/yl/Library/Application Support/typora-user-images/image-20201129212605338.png)
+
+### <font color=red>模板编译</font>
+
+* vue template complier将模板编译为render函数
+* 执行render函数生成vnode
+
+![image-20201129215833778](/Users/yl/Library/Application Support/typora-user-images/image-20201129215833778.png)
+
+![image-20201129221842888](/Users/yl/Library/Application Support/typora-user-images/image-20201129221842888.png)
+
+![image-20201129222512687](/Users/yl/Library/Application Support/typora-user-images/image-20201129222512687.png)
+
+### <font color=blue>Vue三大核心知识点</font>
+
+* #### 响应式：监听data属性 getter  setter（包括数组）
+
+* #### 模板编译：模板编译到render函数，再到vnode
+
+* #### VDOM：patch(elel,vnode)和patch(anode,newVnode)
+
+### 初次渲染
+
+1、解析模板为render函数（或在开发环境就已经完成，vue-loader）
+
+2、**触发响应式**，监听data属性 gettter  setter
+
+3、执行render函数， 生成vnode，patch(elem,vnode)
+
+### 更新过程
+
+1、修改data，触发setter （触发的监听对象，已经在getter中被监听）
+
+2、重新执行render函数，生成newVnode
+
+3、patch（vnode，newVnode）
+
+### <font color=red>异步渲染(非常重要)</font>
+
+  
+
+vdom中diff算法实现：
+
+* 只比较同级，不跨级比较
+* tag不相同，则直接删除，不再深度比较
+* tag和key相同，两者都相同，则认为相同节点，不再深度比较。
+
+![image-20201129231131796](/Users/yl/Library/Application Support/typora-user-images/image-20201129231131796.png)
