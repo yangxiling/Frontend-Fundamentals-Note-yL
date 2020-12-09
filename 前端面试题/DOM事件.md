@@ -2,7 +2,7 @@
 
 :pencil2:A：js是非阻塞单线程语言，在加载的过程中如果碰到同步代码就放到执行栈中。碰到一步代码就放到 Callback Queene（任务队列中）中。当执行栈中的同步代码执行完了，就回去异步队列中拿出相应的代码放到执行栈中执行。执行完当前任务以后，会再去任务对列获取相应代码执行，直到任务队列为空。这个过程就是Event loop。
 
-<img src="/Users/yl/Documents/GitHub/Web/面试-前端题/src/imgs/event-loop.png" alt="image-20201127232835225" style="zoom:50%;" />
+<img src="./src/imgs/event-loop.png" alt="image-20201127232835225" style="zoom:50%;" />
 
 ### :question:事件的级别
 
