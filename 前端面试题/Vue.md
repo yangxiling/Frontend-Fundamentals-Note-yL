@@ -44,7 +44,7 @@
 
 ## 4、如何自己实现v-model？
 
-![image-20201207005931931](/Users/yl/Library/Application Support/typora-user-images/image-20201207005931931.png)
+![image-20201207005931931](./src/imgs/v-model.png)
 
 ## 5、computed 有什么特点？
 
@@ -181,7 +181,7 @@ components:{
 
 * action 可以整合多个 mutation
 
-  ![image-20200616165736146](/Users/yl/Library/Application Support/typora-user-images/image-20200616165736146.png)
+  ![image-20200616165736146](./src/imgs/vuex-机制.png)
 
 ##  17、vnode 描述一个 DOM 结构
 
@@ -275,7 +275,7 @@ Vue3.0 使用Proxy 代替，但是Proxy也不是完美的，有兼容性的问�
 
 第三部连画带说，把下面这个图讲解出来。
 
-![image-20201205210616118](/Users/yl/Library/Application Support/typora-user-images/image-20201205210616118.png)
+![image-20201205210616118](./src/imgs/MVVM.png)
 
 由于前端的发展需求，以前都是通过直接操作DOM来改变页面变化。成本高，逻辑复杂难以维护
 
@@ -291,7 +291,7 @@ Vue3.0 使用Proxy 代替，但是Proxy也不是完美的，有兼容性的问�
 
 ## 22、描述组件渲染和更新的过程？
 
-![image-20201205205329311](/Users/yl/Library/Application Support/typora-user-images/image-20201205205329311.png)
+![image-20201205205329311](./src/imgs/render.png)
 
 vue template complier 将模板编译为render函数
 
