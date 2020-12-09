@@ -23,9 +23,9 @@
 ​    9、声音样式属性：pause-before、pause-after、pause、cue-before、cue-after、cue、play-during
 
 #### 二、有继承性的属性
-​    1、字体系列属性
+​    1、字体系列属性  font系列都会继承
 
-* ​        font：组合字体
+* ​        font：组合字体  f
 * ​        font-family：规定元素的字体系列
 * ​        font-weight：设置字体的粗细
 * ​        font-size：设置字体的尺寸
@@ -39,8 +39,6 @@
 * ​        text-indent：文本缩进
 * ​        text-align：文本水平对齐
 * ​        line-height：行高
-* ​        word-spacing：增加或减少单词间的空白（即字间隔）
-* ​        letter-spacing：增加或减少字符间的空白（字符间距）
 * ​        text-transform：控制文本大小写
 * ​        direction：规定文本的书写方向
 * ​        color：文本颜色

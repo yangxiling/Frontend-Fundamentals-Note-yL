@@ -64,7 +64,3 @@ event || window.event【兼容性写法】
 
 target  || srcElement【兼容性写法】
 
-### :question:什么是可继承元素和不可继承元素
-
-:pencil2:A：
-

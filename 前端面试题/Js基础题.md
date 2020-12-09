@@ -4,7 +4,7 @@
 
 ### ECMAScript：
 
-### :question:1. const、let、var关键字区别？
+## :question:1. const、let、var关键字区别？
 
 &emsp;:pencil2:A: 
 
@@ -16,25 +16,23 @@
 
 __声明的最佳实践风格就是: 不使用var。const优先，let次之__
 
-#​#​#​ :question:2. 简述 Javascript 的数据类型?（应该着重考察symbol）
+## :question:2. 简述 Javascript 的数据类型?（应该着重考察symbol）
 
 &emsp;:pencil2:A:Number、String、Bloonean、Null、Undefined、Object和Symbol 七种数据类型
 
-### :question:3.​  Javascript 中 == 与 === 的区别是什么？
+## :question:3.​  Javascript 中 == 与 === 的区别是什么？
 
 &emsp;:pencil2:A:相等（==）操作符会进行强制的类型转换。全等操作符不会，只有两个值完全相等才会返回true。相等运算符（null == undefined）为true，全等为false。【实际上undefined是null派生出来的一个对象，他俩很相似，所以相等运算符为true。对于相等运算符而言他俩是不同的数据类型】
 
 由于相等操作符会进行类型转换，所以推荐使用全等操作符。这样有助于保持代码中数据类型的完整性。
 
-:question:6. 简述 Javascript 原型以及原型链
+## :question: 6. 简述 Javascript 原型以及原型链
 
 &emsp;:pencil2:A:一个对象在创建的时候都会在其内部初始化一个属性，就是prototype（原型）。
 
 当我们访问对象属性的时候，首先会在这个对象的内部进行查找，如果找不到就会到它的原型上查找，它的原型还会有自己的原型，就这样一级一级查找下去就形成了原型链。
 
-
-
-:question:7. 简述 Javascript 中 this 的指向有哪些？
+## :question:7. 简述 Javascript 中 this 的指向有哪些？
 
 * 以函数调用的时候，this指向window。
 
@@ -46,13 +44,11 @@ __声明的最佳实践风格就是: 不使用var。const优先，let次之__
 
 
 
-:question:8. 箭头函数和普通函数的区别是什么？
+##  :question:8. 箭头函数和普通函数的区别是什么？
 
 &emsp;:pencil2:A:0.箭头函数语法更简洁、清晰；1.箭头函数没有this，它的this指向其上下文的this；2.箭头函数不能使用arguments、super和new.target，也不能用作构造函数。3.箭头函数没有prototype属性。
 
-
-
-:question:9. 什么是闭包，什么是立即执行函数，它的作用是什么？简单说一下闭包的使用场景？
+## :question:9. 什么是闭包，什么是立即执行函数，它的作用是什么？简单说一下闭包的使用场景？
 
 &emsp;:pencil2:A:函数A返回一个函数B，函数B中使用了函数A变量，函数B就是闭包。
 
@@ -66,7 +62,7 @@ _不是十分必要的情况下避免使用闭包。因为作用域一直不释�
 
 
 
-:question:10. JavaScript 中的严格模式是什么，有什么作用？
+## :question:10. JavaScript 中的严格模式是什么，有什么作用？
 
 &emsp;:pencil2:A:严格模式：是采用具有限制性JavaScript变体的一种方式，从而使代码脱离了“稀松懒散”的模式。
 
@@ -78,7 +74,7 @@ _不是十分必要的情况下避免使用闭包。因为作用域一直不释�
 
 
 
-:question:11.作用域链？
+## :question:11.作用域链？
 
 &emsp;:pencil2:A:内部函数访问外部函数的变量，采用的是链式查找的方式来决定取哪个值。这种结构称之为作用域链。
 
@@ -86,7 +82,7 @@ _不是十分必要的情况下避免使用闭包。因为作用域一直不释�
 
 
 
-:question:..Javascript 可以保存的最大数值是多少
+## :question:Javascript 可以保存的最大数值是多少
 
 &emsp;:pencil2:A:js可以表示的最大数值保存在number.MAX_VALUE中，可以表示的最小数值保存在number.MIN_VALUE中
 
@@ -99,7 +95,7 @@ number.MIN_VALUE:5e-324;
 
 &emsp;:pencil2:A:见下几题☟
 
-### :question:promise有哪些状态？简述Promise.all的实现原理。
+## :question:promise有哪些状态？简述Promise.all的实现原理。
 
 &emsp;:pencil2:A:promise是用来异步编程的，可以看成是一种状态机。初始状态是pending。可以通过resolve函数或者reject函数，将状态改变为resolved或者rejected。状态一经改变就永远不会变。
 
@@ -109,7 +105,7 @@ Promise.all方法接收一个含有promise实例的数组作为参数，返回�
 
 如果数组中的所有promise返回的都是resolved状态，Promise.all的状态才会是resolved。如果数组中有rejected状态，那么Promise.all就返回第一个reject函数的返回值。
 
- ### :question:简述常见异步编程方案 (promise, generator, async) 的原理
+## :question:简述常见异步编程方案 (promise, generator, async) 的原理
 
 &emsp;:pencil2:A:他们三个都是用来异步编程的。
 
@@ -121,7 +117,7 @@ Promise.all方法接收一个含有promise实例的数组作为参数，返回�
 
 
 
-### :question:proxy
+## :question:proxy
 
 &emsp;:pencil2:A：proxy是ES6新增的功能，可以用来自定义对象中的操作
 
@@ -129,7 +125,7 @@ Promise.all方法接收一个含有promise实例的数组作为参数，返回�
 
 使用proxy可以很方便实**现数据的绑定和监听**
 
-### :question:简述 Javascript 中的防抖与节流的原理并尝试实现★★★
+## :question:简述 Javascript 中的防抖与节流的原理并尝试实现★★★
 
 &emsp;:pencil2:A：函数防抖是只个顺序的调用（点击、提交）合并为一次（点击）。
 
@@ -143,7 +139,7 @@ Promise.all方法接收一个含有promise实例的数组作为参数，返回�
 * **throttle**：保证每 X 毫秒恒定的执行次数，比如每200ms检查下滚动位置，并触发 CSS 动画。
 * **requestAnimationFrame**：可替代 throttle ，函数需要重新计算和渲染屏幕上的元素时，想保证动画或变化的平滑性，可以用它。注意：IE9 不支持。
 
-### :question:简述 Javascript 的柯里化与逆柯里化★★★
+## :question:简述 Javascript 的柯里化与逆柯里化★★★
 
 &emsp;:pencil2:A：
 
