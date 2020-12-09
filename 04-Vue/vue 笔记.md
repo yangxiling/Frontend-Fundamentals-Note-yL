@@ -36,15 +36,11 @@ app.$set()  添加，设置属性
 
 app.$delete()  删除属性
 
-#### 2.lifeCircle（生命周期）：
+## Vue事件
 
-beforeCreate，create，beforeMount,mounted,
+<font color=gree>1.事件event是原生的事件对象</font>
 
-beforeUpdate,updated,
-
-beforeDestroy,destroyed
-
-生命周期方法：
+<font color=gree>2.事件被挂载 在 当前元素上面</font>
 
 #### 3.vue原生指令：
 
@@ -118,55 +114,13 @@ watch：更加灵活、通用；watch中可以执行任何逻辑，如函数节�
 
 methods： 
 
-### 5.vue组件：
+## vue高级特性：
 
-定义组件：
+-自定义 v-model					 - 动态、异步组件
 
-*const* CompOne = {
+-$nextTick								-keep-alive
 
-props:{
-
-},
-
-template:`<div></div>`,
-
-data(){
-
-return{
-
-}
-
-},
-
-}
-
-注册组件：
-
-//[Vue.component("CompOne",CompOne)//](http://vue.component(/) 注册组件方法一
-
-new Vue({
-
-// components: {//注册组件方法二
-
-// CompOne:CompOne
-
-// },
-
-el:'#root',
-
-template:`<div><comp-one></comp-one></div>`
-
-})
-
-extend  组件的复用、扩展，
-
-this.$parent
-
-插槽：slot，作用域插槽：slot-scope，
-
- 获取组件实例：ref
-
-跨层级组件通讯：provide，inject
+-slot										  -mixin   						-refs
 
 ### 路由：
 
@@ -330,7 +284,7 @@ callback ref
 
 ![image-20200616165142483](/Users/yl/Library/Application Support/typora-user-images/image-20200616165142483.png)
 
-![image-20200616165512380](/Users/yl/Library/Application Support/typora-user-images/image-20200616165512380.png)
+
 
 ![image-20200616165736146](/Users/yl/Library/Application Support/typora-user-images/image-20200616165736146.png)
 
@@ -342,7 +296,7 @@ callback ref
 * Action —— this.$store.dispatch("xxx")  ——mapAction  赋值
 * Module
 
-<font size=5 color=blue>底层原理</font>
+<font size=5 color=blue>Vuex底层原理</font>
 
 * State ：提供一个响应式数据
 * Getters : 借助Vue的计算属性 computed 来实现缓存
@@ -382,7 +336,13 @@ Prettier：格式化 和ESLint使用时要配置一下，防止有些功能冲�
 * @vue/test-utils
 * sinon
 
+## <font color=red>Vue原理</font>
 
+<font color=purple>**1、组件化							4、模版编译**</font>
+
+**<font color=purple>2、响应式							5、组件的渲染过程</font>** 
+
+**<font color=purple>3、vdom和diff算法			6、前端路由</font>**
 
 ### VDOM
 
@@ -409,11 +369,19 @@ Vue参考的Snabbdom库实现的 vdom和diff
 * vue template complier将模板编译为render函数
 * 执行render函数生成vnode
 
-![image-20201129215833778](/Users/yl/Library/Application Support/typora-user-images/image-20201129215833778.png)
+## <font color=red>with语法</font>
 
-![image-20201129221842888](/Users/yl/Library/Application Support/typora-user-images/image-20201129221842888.png)
+模板编译用到with语法
 
-![image-20201129222512687](/Users/yl/Library/Application Support/typora-user-images/image-20201129222512687.png)
+![image-20201208143335482](/Users/yl/Library/Application Support/typora-user-images/image-20201208143335482.png)
+
+1、改变块级作用域（{ }）内自由变量的查找方式，当作obj的属性来查找。
+
+2、如果找不到匹配的obj属性，就会报错。
+
+3、with要慎用，它打破了作用域规则，易读性极差。
+
+
 
 ### <font color=blue>Vue三大核心知识点</font>
 
