@@ -57,8 +57,6 @@ function.call(<font color=red>obj</font>,num1num2....)
 
 
 
-
-
 <span style="background:red">window ---> document ---> html --->  body --->  Element</span>
 
 - 如果想获取 `body` 节点，方法是：`document.body`；

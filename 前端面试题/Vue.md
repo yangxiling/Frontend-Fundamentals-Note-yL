@@ -104,13 +104,22 @@ export default{
 
 * **父子**组件props  和  this.$emit(在子组件中使用)
 
+  
+
 * **自定义事件 （不限组件间的关系，都可以通过自定义事件实现通讯）**
 
-  <font color='deeppink'>event</font>.$on ('事件名'，'函数名')   绑定自定义事件
+```javascript
+//注册事件
+vm.$on('test', function (msg) {  console.log(msg) }) 
+//触发事件
+vm.$emit('test', 'hi') // => "hi"
+```
 
-  <font color='deeppink'>event</font>.$emit('事件名','参数')       触发自定义事件
+<font color='deeppink'>event</font>.$on ('事件名'，'函数名')   绑定自定义事件
 
-  <font color='deeppink'>event</font>.$off('事件名','函数名') 	 销毁自定义事件（必须销毁，否则可能引起内存泄漏）
+<font color='deeppink'>event</font>.$emit('事件名',<font color=red>'**参数**'</font>)       触发自定义事件
+
+<font color='deeppink'>event</font>.$off('事件名','函数名') 	 销毁自定义事件（必须销毁，否则可能引起内存泄漏）
 
 <font color='deeppink'>event</font>从哪来的呢？---->**event就是vue的实例☟，vue已经实现了自定义事件的能力**
 
@@ -127,6 +136,18 @@ export default new Vue();//直接new一个vue的实例
 
 **抽离多组件公共的业务逻辑，可以使用mixin**
 
+```javascript
+//用法：
+import mixin from "./path"
+data(){
+  return{
+    component:{
+      mixins:[mixin]
+    }
+  }
+}
+```
+
 就是把相同的部分单独拿出来放在一个文件，然后在需要使用这部分内容的文件中引入这个文件使用就可以。
 
 **mixin的一些缺点：**
@@ -135,7 +156,7 @@ export default new Vue();//直接new一个vue的实例
 * 多mixin可能会造成命名冲突
 * mixin和组件可能出现多对多的关系，复杂度较高。
 
-Vue3中 提出了Composition API来解决mixin的缺点。
+<span style="background-color:skyblue">Vue3中 提出了Composition API来解决mixin的缺点。</span>
 
 ## 13、何时要使用异步组件？（很重要，常考）
 

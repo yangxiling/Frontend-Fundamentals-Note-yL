@@ -181,7 +181,7 @@ beforeRouteLeave(){},
 
 <font color=green>异步路由，按需加载，提高首屏加载的速度</font>
 
-<font color=red>component:import("../");//很简单</font>
+<font color=red>component:（）=>  import("../");//</font>
 
 ### Vuex:
 
