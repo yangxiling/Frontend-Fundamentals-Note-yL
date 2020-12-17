@@ -253,7 +253,23 @@ React需要自力更生，Vue把想要的都给你
 
 # <font color=steelblue>webpack</font>
 
-1、前端代码为何要进行构建和打包？
+### 1、前端代码为何要进行构建和打包？
+
+**代码层面：**
+
+体积更小（Tree-Shaking、压缩、合并），加载更快
+
+编辑高级语言或语法（TS，ES6+，模块化，scss）
+
+兼容性和错误检查（Polyfill、postcss、eslint）
+
+**研发流程：**关注研发流程，关注团队整体开发效率
+
+统一高效的开发环境
+
+统一的构建流程和产出标准
+
+集成公司构建规范（提测、上线等）
 
 #### 2、module、chunk、bundle 分别什么意思，有何区别？
 
@@ -263,7 +279,11 @@ chunk - 多模块合成的代码，如entry 、  import( )、 splitChunk
 
 bundle - 最终的输出的文件（一般是打包chunk的文件）
 
-3、loader 和 plugin 的区别？
+### 3、loader 和 plugin 的区别？
+
+loader 模块转换器，如 scss-->css。把相应的文件转换成另一种文件。
+
+plugin 扩展插件，如 HtmlWebpackPlugin，把js、css文件塞进相应的html文件中去。
 
 #### 4、webpack 如何实现懒加载？
 
@@ -358,13 +378,10 @@ plugin：[
 
 7、热更新 HotModuleReplacementPlugin。但需要自己配置哪些模块需要开启热更新。（不能用于生产环境）
 
-6、7比较：
+**6、7比较：**
 
 * 自动刷新，整个网页全部刷新，速度较慢。整个网页全部刷新，状态丢失。
-
 * 热更新，只更新修改过的代码。但是要自己配置。
-
-  
 
 8、DllPlugin：动态链接库插件，针对比较大的库（不用生产环境，只为提升开发体验）
 
@@ -378,30 +395,55 @@ DllReferencePlugin -- 使用dll文件
 
 
 
-**优化产出的代码  --  产品性能**
+**优化产出的代码  --  产品性能**（主要和产品线上性能相关）
+
+打包后的代码体积更小
+
+合理分包，不重复加载
+
+速度更快，内存使用更少
+
+1、小图片 base64编码，不用请求图片。
+
+2、bundle  +  hash
+
+3、懒加载（比较大的文件使用懒加载，先把重要的文件加载出来，然后再异步加载大文件）
+
+4、拆分打包，提取公共代码
+
+5、使用production。【自动开启代码压缩。Vue React等会自动删掉调试代码。自动启用Tree-Shaking（删除没有用的代码）】
+
+6、使用 Scope Hosting。作用：多函数合并成一个函数。创建函数少了，函数作用域随之减少，执行的更快。代码体积更小。
+
+```javascript
+module.export={
+	resolve:{
+    //针对 Npm 中的第三方模块优先采用jsnext：main  中指向的ES6模块话语法的文件
+    mainFields:['jsnext:main','browser','main']
+  },
+  plugins:[
+    new ModuleConcatenationPlugin(),
+  ]
+}
+```
 
 
 
-6、babel-runtime 和 babel-polyfill 的区别
+### 6、babel-runtime 和 babel-polyfill 的区别
+
+babel-polyfill （7.4已被弃用，直接使用core-js和regenerator）就是 core-js和regenerator 的集合。会污染全局。
+
+core-js是处理 ES6、 ES7等语法的兼容性问题的工具。但是core-js中没有处理generator的方法，所以有regenerator工具来处理generate语法。
+
+<span style="background-color:LightYellow">总结下, `Babel` 只是转换 `syntax` 层语法，所有需要 `@babel/polyfill` 来处理API兼容,又因为 `polyfill` 体积太大，所以通过 `preset`的 `useBuiltIns` 来实现按需加载,再接着为了满足 npm 组件开发的需要 出现了 `@babel/runtime` 来做隔离</span>
+
+### 7、ES6 Module 和 CommonJs区别？
+
+ES6Module是静态引入，**编译时**就引入
+
+CommJS是动态引入，**执行时**才会引入
+
+只有ES6 Module 才能静态分析，实现Tree-Shaking
 
 
 
-css抽离：
-
-使用 MiniCssExtractPlugin.loader 这个插件抽离css文件。生成单独打包文件，而不是用style-loader将文件放入html文件內。
-
-使用optimization：{minimizer:[ ] }压缩css，使体积变的更小。
-
-
-
-抽离公共代码 和 第三方代码：
-
-
-
-懒加载：import（“./path”）
-
-
-
-处理JSX   在.babelrc中配置       @babel/preset-react
-
-处理vue  直接下载vue-loader，普通配置即可

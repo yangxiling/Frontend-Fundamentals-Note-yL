@@ -375,3 +375,27 @@ style-loader（把解析好的css插入到相应位置） <--- css-loader（把�
 
 #### <font color=MediumVioletRed>-抽离公共代码</font>				-Vue
 
+
+
+css抽离：
+
+使用 MiniCssExtractPlugin.loader 这个插件抽离css文件。生成单独打包文件，而不是用style-loader将文件放入html文件內。
+
+使用optimization：{minimizer:[ ] }压缩css，使体积变的更小。
+
+
+
+抽离公共代码 和 第三方代码：
+
+
+
+懒加载：import（“./path”）
+
+
+
+处理JSX   在.babelrc中配置       @babel/preset-react
+
+处理vue  直接下载vue-loader，普通配置即可
+
+#### babel解析语法，webpack处理模块
+
