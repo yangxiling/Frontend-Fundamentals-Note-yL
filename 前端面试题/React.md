@@ -273,13 +273,13 @@ React需要自力更生，Vue把想要的都给你
 
 #### 2、module、chunk、bundle 分别什么意思，有何区别？
 
-module - 各个源码文件，webpack中一切皆模块。
+module - 各个源码文件(html\js\css、图片等文件)，webpack中一切皆模块。
 
-chunk - 多模块合成的代码，如entry 、  import( )、 splitChunk
+chunk - 多模块合成的代码，如entry入口文件 、  import( )、 splitChunk。
 
-bundle - 最终的输出的文件（一般是打包chunk的文件）
+bundle - 最终的输出的文件（一般是打包的chunk的文件输出）
 
-### 3、loader 和 plugin 的区别？
+#### 3、loader 和 plugin 的区别？
 
 loader 模块转换器，如 scss-->css。把相应的文件转换成另一种文件。
 
@@ -289,7 +289,11 @@ plugin 扩展插件，如 HtmlWebpackPlugin，把js、css文件塞进相应的ht
 
 import（“./path”）
 
-#### 5、webpack常见性能优化
+结合Vue  React异步组件来说
+
+结合 Vue-router  React-router 异步加载路由
+
+#### <font color=DarkMagenta>webpack常见性能优化</font>
 
 **优化打包构建速度 -- 开发体验和效率**
 
@@ -403,7 +407,7 @@ DllReferencePlugin -- 使用dll文件
 
 速度更快，内存使用更少
 
-1、小图片 base64编码，不用请求图片。
+1、小图片使用 base64编码，不用请求图片了。
 
 2、bundle  +  hash
 
@@ -427,9 +431,19 @@ module.export={
 }
 ```
 
+### 如何产出一个lib
+
+<img src="./src/imgs/产出lib.png" alt="image-20201218162804810" style="zoom:50%;" />
+
+### babel和webpack区别？
+
+babel -- js新语法是解析工具，不关心模块化
+
+webpack处理模块化，打包构建工具，是多个loader plugin的集合。（webpack怎么配置一个loader，配置一个plugin它就有什么样的能力）
 
 
-### 6、babel-runtime 和 babel-polyfill 的区别
+
+### babel-runtime 和 babel-polyfill 的区别
 
 babel-polyfill （7.4已被弃用，直接使用core-js和regenerator）就是 core-js和regenerator 的集合。会污染全局。
 
@@ -437,7 +451,15 @@ core-js是处理 ES6、 ES7等语法的兼容性问题的工具。但是core-js�
 
 <span style="background-color:LightYellow">总结下, `Babel` 只是转换 `syntax` 层语法，所有需要 `@babel/polyfill` 来处理API兼容,又因为 `polyfill` 体积太大，所以通过 `preset`的 `useBuiltIns` 来实现按需加载,再接着为了满足 npm 组件开发的需要 出现了 `@babel/runtime` 来做隔离</span>
 
-### 7、ES6 Module 和 CommonJs区别？
+
+
+### 为什么 Proxy不能被Polyfill？
+
+<span style="background-color:lightyellow">因为 Proxy的功能无法用原生的某个方法来模拟。</span>
+
+比如Class可以用function模拟、Promise可以用callback模拟。但是Proxy的功能Object.defineProperty() 无法模拟。
+
+### ES6 Module 和 CommonJs区别？
 
 ES6Module是静态引入，**编译时**就引入
 
