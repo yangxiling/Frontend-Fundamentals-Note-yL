@@ -128,8 +128,6 @@ import Vue from 'vue'
 export default new Vue();//直接new一个vue的实例
 ```
 
-
-
 * vuex（所有组件都可以通讯）
 
 ## 12、多个组件有相同的逻辑，如何抽离？

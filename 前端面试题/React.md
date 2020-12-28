@@ -33,15 +33,17 @@ Vue中的event事件是原生事件（MouseEvent）。就是DOM事件。
 
 3、React所有事件，都被挂载到 根元素上。
 
-4、和 Vue事件也不一样。
-
 **为什么要有合成事件机制？合成事件的优点：**
 
 更好的兼容性 和 跨平台
 
-挂载到根元素上，减少内存消耗，避免频繁的解绑事件（类似事件委托）
+挂载到根元素上，减少内存消耗，避免频繁的解绑事件（类似事件委托，事件委托是利用事件的冒泡原理来实现的）
 
-方便事件的统一管理（如事物机制）
+方便事件的统一管理（如事务机制）
+
+4、和 Vue事件也不一样。
+
+
 
 ## React组件生命周期
 
@@ -99,9 +101,13 @@ Redux和Context
 
 ## 什么是受控组件，非受控组件？
 
-表单的值，受state控制
+React的state成为表单元素的“唯一数据源”，
 
-需要自行监听onChange，更新state
+表单的值，受state控制。需要自行监听onChange、onSubmit这些事件，更新state。
+
+<span style="background-color:lightblue">推荐使用受控组件来处理表单数据，因为这时的表单数据是由React组件来管理的。</span>
+
+<span style="background-color:lightblue">非受控组件的表单数据是交由DOM节点来处理。</span>
 
 对比非受控组件（可能问的更多一点）
 
@@ -157,9 +163,13 @@ SCU  必须要配合  “不可变值 ”  使用，否则容易出错
 
 * `React.PureComponent` 与 `React.Component` 很相似。
 
+  shouldComponentUpdate(prevProp,newProps),通过对比prevProps和newProps的进行对比，来判断需不需要重新渲染。
+
   <font color=deeppink>两者的区别在于 `React.Component`并未实现 `shouldComponentUpdate()`，而 `React.PureComponent` 中以浅层对比 prop 和 state 的方式来实现了`shouldComponentUpdate`函数</font>
 
 * memo，函数组件中的PureComponent
+
+  优化函数冲渲染功能
 
 浅比较已经适用于大部分情况（尽量不要做深度比较）
 
@@ -170,6 +180,14 @@ SCU  必须要配合  “不可变值 ”  使用，否则容易出错
 
 
 ## 简述 React 中的 Effect Hook 机制0
+
+类组件的问题：
+
+* 缺少复用机制，状态逻辑难以复用
+* 状态和生命周期 
+* this指向的困扰 
+
+
 
 
 
@@ -209,11 +227,11 @@ SCU  必须要配合  “不可变值 ”  使用，否则容易出错
 
 自定义的事件、DOM事件及时销毁
 
-合理使用异步组件（异步加载大组件）
+合理使用异步组件，较大的组件使用异步加载
 
-减少函数 bind  this 的次数 
+ 
 
- 合理使用 SCU  PureComponent 和memo
+ 合理使用 SCU  PureComponent 和memo。减少运行时不必要的渲染。提升性能。
 
  合理使用<span style="background-color:rgb(255, 255, 128)"> Immutable对象（加速嵌套数据的比较，不是深拷贝，速度好）</span>
 

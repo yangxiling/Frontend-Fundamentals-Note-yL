@@ -108,7 +108,7 @@ SCU  必须要配合  “不可变值 ”  使用
 
 ## <font color=purple>React高级特性</font>
 
-### -函数组件                        	-content
+### -函数组件                        	-context
 
 ### -非受控组件						-异步组件
 
@@ -216,7 +216,7 @@ MyClass.contextType = MyContext;
 
 普遍异步加载使用  import('./path')
 
-React使用: React.lazy()，<React.Suspense></React.Suspense>
+React使用: React.lazy(()=>import('./')) + <Suspense> <Suspense/>，<React.Suspense></React.Suspense>
 
 ```javascript
 //用法：
@@ -260,6 +260,40 @@ const EnhancedComponent = higherOrderComponent(WrappedComponent);
 
 按需使用即可
 
+
+
+### React Hooks
+
+useSate（）；可以使用函数定义默认值。useState使用次数不能多也不能少。
+
+useEffect，执行的是副作用，需要在渲染完成后执行
+
+useContext，
+
+useMemo/Callback，有对比返回值，useMemo是在渲染期间完成的 
+
+如果useMemo()里面是是一个函数，useCallback(fn)和它是一样的。
+
+
+
+Hooks优势
+
+* 方便复用状态逻辑
+* 副作用的关注点分离
+* 函数组件无this问题
+
+
+
+#### 生命周期函数如何映射到Hooks？
+
+useEffect（），可以实现
+
+![image-20201228002650287](/Users/yl/Documents/GitHub/Web/前端面试题/src/imgs/React-生命周期.png)
+
+####  类实例成员变量如何映射到Hooks？
+
+
+
 ## <font color=purple>Redux部分</font>
 
 #### -基本概念																		-异步action
@@ -274,9 +308,11 @@ const EnhancedComponent = higherOrderComponent(WrappedComponent);
 
 store   state  action  reducer
 
+数据流  数据容器  的管理工具
 
-
-
+* 单一数据源。数据只有一份  避免不同步
+* 状态不可变。修改数据的前后  数据源不再是同一个对象了
+* 纯函数修改数据。精确重现对数据的修改行为
 
 ## <font color=MediumVioletRed>React 原理列表</font>
 
@@ -346,12 +382,11 @@ Vue中的event事件是原生事件（MouseEvent）。就是DOM事件。
 
 setState:
 
-* 不可变值   不能直接修改  this.statede值
+* 不可变值   不能直接修改  this.state值
 
 * 可能是异步更新，也可能是同步。
 
 * 可能会合并  相同的对象会合并，类似Object.assign()。函数不会合并
-
 
 <span style="background-color:pink">DOM事件、setTimeout  是同步。</span>
 
@@ -361,7 +396,11 @@ setState:
 
 
 
+![image-20201228120737738](/Users/yl/Library/Application Support/typora-user-images/image-20201228120737738.png)
 
+![image-20201228121335445](/Users/yl/Library/Application Support/typora-user-images/image-20201228121335445.png)
+
+![image-20201228120912334](/Users/yl/Library/Application Support/typora-user-images/image-20201228120912334.png)
 
 # <font color=steelblue>webpack笔记部分</font>
 
