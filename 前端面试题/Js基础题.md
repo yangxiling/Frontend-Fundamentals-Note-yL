@@ -16,9 +16,27 @@
 
 __声明的最佳实践风格就是: 不使用var。const优先，let次之__
 
-## :question:2. 简述 Javascript 的数据类型?（应该着重考察symbol）
+## :question:2. 简述 Javascript 的数据类型?
 
-&emsp;:pencil2:A:Number、String、Bloonean、Null、Undefined、Object和Symbol 七种数据类型
+&emsp;:pencil2:A:Number、String、Bloonean、Null、Undefined和Symbol 六种基本数据类型，一种引用数据类型Object（Function，Array）。
+
+基本数据类型的值是不可变的。基本数据类型不可以添加属性和方法。基本数据类型是存放在栈中（栈区包括了变量的标识符和变量的值）
+
+引用类型可以改变。引用类型的可以添加属性和方法。引用类型赋值是对象引用（一个指针，两个指针同时指向同一个堆内存对象）
+
+基本包装类（包装对象）：String、Number、Boolean。**ECMAScript还提供了三个特殊的引用类型Boolean,String,Number.我们称这三个特殊的引用类型为基本包装类型，也叫包装对象**.
+
+### :question:遍历对象的方法？
+
+1.for...in  会遍历对象（自身的 和  继承的）可枚举属性，不会遍历Symbol【尽量不要用for..in,而使用Object.keys()】
+
+2.Object.keys(obj )   **返回一个数组**，包含对象 自身的 可枚举属性，不遍历Symbol。
+
+3.Object.getOwnPropertyNames(obj )   **返回一个数组**，包含对象自身的所有属性**（包括不可枚举属性）**
+
+4.Objext.getOwnPropertySymbols(obj)  **返回一个数组**，包含对象中所有键名是Symbol的属性。
+
+5.Reflect.ownKeys(obj)  **返回一个数组**，包含对象自身中所有键名。不管键名是否可枚举，也不管是否是Symbol
 
 ## :question:3.​  Javascript 中 == 与 === 的区别是什么？
 

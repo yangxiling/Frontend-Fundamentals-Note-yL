@@ -1,8 +1,6 @@
 Function.prototype.myCall = function(context,...args){
   context = context || window;
-  console.log(context)
   context.fn = this;
-  console.log(context)
   let result = context.fn(...args)
   delete context.fn;
   return result;

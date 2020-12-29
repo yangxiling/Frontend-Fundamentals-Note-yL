@@ -25,4 +25,4 @@ const test = {
 };
 test.showName("handsome"); // fy is handsome
 test.showName.bind({ name: "Mr.fy" })("handsome");
-test.showName.bindNew({ name: "Mr.fy" })("handsome");
+test.showName.myBind({ name: "Mr.fy" })("handsome");
