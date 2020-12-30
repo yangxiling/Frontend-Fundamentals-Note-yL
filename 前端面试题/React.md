@@ -229,23 +229,11 @@ SCU  必须要配合  “不可变值 ”  使用，否则容易出错
 
 合理使用异步组件，较大的组件使用异步加载
 
- 
-
  合理使用 SCU  PureComponent 和memo。减少运行时不必要的渲染。提升性能。
 
  合理使用<span style="background-color:rgb(255, 255, 128)"> Immutable对象（加速嵌套数据的比较，不是深拷贝，速度好）</span>
 
 按需使用 & state层级尽量扁平化，不要嵌套过深。
-
-
-
-
-
-webpack层面的优化
-
-前端通用性能优化
-
-使用SSR
 
 
 
@@ -262,6 +250,8 @@ webpack层面的优化
 React使用JSX拥抱  JS（就是在写js），Vue使用模板拥抱   html（在写html）。
 
 React是函数式编程，Vue是面向对象编程。
+
+事件不一样。React-SyntheticEvent，Vue-原生event
 
 React需要自力更生，Vue把想要的都给你
 
