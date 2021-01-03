@@ -18,7 +18,7 @@ __声明的最佳实践风格就是: 不使用var。const优先，let次之__
 
 ## :question:2. 简述 Javascript 的数据类型?
 
-&emsp;:pencil2:A:Number、String、Bloonean、Null、Undefined和Symbol 六种基本数据类型，一种引用数据类型Object（Function，Array）。
+&emsp;:pencil2:A:Number、String、Bloonean、Null、Undefined和Symbol 六种基本数据类型，<span style='background-color:lightgreen'>一种引用数据类型Object（Function，Array）</span>。
 
 基本数据类型的值是不可变的。基本数据类型不可以添加属性和方法。基本数据类型是存放在栈中（栈区包括了变量的标识符和变量的值）
 
@@ -28,7 +28,7 @@ __声明的最佳实践风格就是: 不使用var。const优先，let次之__
 
 ### :question:遍历对象的方法？
 
-1.for...in  会遍历对象（自身的 和  继承的）可枚举属性，不会遍历Symbol【尽量不要用for..in,而使用Object.keys()】
+1.for...in  会遍历对象（<font color='red'>自身的 和  继承的</font>）可枚举属性，不会遍历Symbol【尽量不要用for..in,而使用Object.keys()】
 
 2.Object.keys(obj )   **返回一个数组**，包含对象 自身的 可枚举属性，不遍历Symbol。
 

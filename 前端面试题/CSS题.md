@@ -299,3 +299,16 @@ rem中 r的意思是root
 * 非替换元素是其内容包含在文档中的元素，其内容可以受`CSS`渲染控制。
 * 非替换元素的内容不会超出`CSS`的模型范围，`CSS`在渲染时会考虑非替换元素的内容。
 * `HTML`的大多数元素是不可替换元素，即其内容直接表现给浏览器，例如`<div>`、`<p>`、`<h1>~<h6>`、`<table>`等等等等。
+
+### 实现一个三角形？
+
+```css
+    .box{
+      width: 0;
+      height: 0;
+      border-left: 100px solid transparent;
+      border-right: 100px solid transparent;
+      border-bottom: 100px solid red;
+    }
+```
+

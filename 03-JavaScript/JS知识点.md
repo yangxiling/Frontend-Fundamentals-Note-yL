@@ -51,7 +51,7 @@ __声明的最佳实践风格就是: 不使用var。const优先，let次之__
 
 ### call\apply\bind
 
-call就是Function.prototype.call。就是仔函数的原型上写了一个方法函数叫call。他内部实现是让当前执行环境的上下文的this指向另一个指定的对象。agrs是作为当前function的参数。
+call就是Function.prototype.call。就是在函数的原型上写了一个方法函数叫call。他内部实现是让当前执行环境的上下文的this指向另一个指定的对象。agrs是作为当前function的参数。
 
 function.call(<font color=red>obj</font>,num1num2....)
 
@@ -128,7 +128,11 @@ rpx:是响应式开发   像素
 
 ### 构造函数、原型和实例的关系
 
-<font color=blue>每一个构造函数都有一个原型。原型中有一个属性指回构造函数。实例中有一个内部指针指向原型。</font>
+<span style="background-color:lightyellow">每一个构造函数   都有一个原型(prototype)。 </span>
+
+<span style="background-color:skyblue">原型  中有一个属性指回构造函数。</span>
+
+<span style="background-color:pink">实例  中有一个内部指针指向   原型。</span>
 
 <font color=blue>**原型链：**原型链其实是一个链表   原型链的_ _proto_ _相当于链表的next指针</font>
 
