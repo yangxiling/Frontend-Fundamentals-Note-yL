@@ -25,35 +25,45 @@
 
 __声明的最佳实践风格就是: 不使用var。const优先，let次之__
 
-**4.typeof 操作符：返回“object”表示返回的值为 对象 或 null；****
+### 4.
+
+**typeof 操作符：返回“object”表示返回的值为 对象 或 null；****
 
 其他数据类型返回值一一对应。
 
-5.symbol：<span style="color:red">symbol值作为对象属性时，不能使用点运算符读取，只能用[]方括号读取。在对象的内部，使用 Symbol 值定义属性时，Symbol 值必须放在方括号之中。</span>
+### 5.
+
+symbol：<span style="color:red">symbol值作为对象属性时，不能使用点运算符读取，只能用[]方括号读取。在对象的内部，使用 Symbol 值定义属性时，Symbol 值必须放在方括号之中。</span>
 
 一个新的 API，`Reflect.ownKeys()`方法可以返回所有类型的键名，包括常规键名和 Symbol 键名。
 
-6.Array数组的indexOf、includes  vs  for-loop性能比较：
+### 6.
+
+Array数组的indexOf、includes  vs  for-loop性能比较：
 
 数组includes方法的性能实现原理是while循环，和indexOf（内部也是while循环）实现原理大同小异，效率差相当。都没有直接for···loop性能好，因为for···loop没有前置判断和浏览器对它的优化。
 
-### 6、json.parse：解析字符串
+### 7、json.parse：解析字符串
 
 ### json.stringify：将对象转化为字符串
 
 <font color="blue">深拷贝方法：json.parse(json.stringify(Obj))</font>
 
-<font color="blue">缺点：不能解析 undefined和函数。无法解决循环引用的问题。</font>
+<font color="blue">缺点：1.不能解析 undefined;2.函数;3.无法解决循环引用的问题。</font>
 
 <font color="deeppink">可以通过 for...in遍历对象，实现深拷贝。</font>
 
 
 
-### call\apply\bind
+### 8.call\apply\bind
 
 call就是Function.prototype.call。就是在函数的原型上写了一个方法函数叫call。他内部实现是让当前执行环境的上下文的this指向另一个指定的对象。agrs是作为当前function的参数。
 
-function.call(<font color=red>obj</font>,num1num2....)
+function.call(obj, arg1,arg2...)
+
+function.apply(obj,[arg1,arg2..])
+
+function.bind(obj,arg1,arg2...)()
 
 
 
@@ -90,35 +100,15 @@ arguments代表的是实参。在调用函数时，我们所传递的实参都�
 
 之所以说arguments是伪数组，是因为：**arguments可以修改元素，但不能改变数组的长度**
 
-* call，apply，bind
-
-function.call(obj, argument[0],argument[1]...)
-
-function.apply(obj,[argument[0],argument[1]...])
-
-function.bind(obj,argument[0],argument[1]...)()
-
-**1.function中的this指向obj**
-
-**2.argument是function的参数**
-
-3.bind返回的是一个函数，所以要加（）
-
-* 同源策略
-
-  <font color=blue>协议相同、域名相同、端口相同</font>
-
-  举例来说，<span style ="background:pink">`http://www.example.com/dir/page.html`</span>这个网址，<span style="background:red">协议是`http://`，域名是`www.example.com`，端口是`80`（默认端口可以省略）</span>。
-
-#### webpack打包注意事项：
-
-dev：webpack  --config  webpack.config.js  //会生成dist目录
+<span style="background-color:lightyellow">ES6 引入 rest 参数（形式为`...变量名`），用于获取函数的多余参数，这样就不需要使用`arguments`对象了。rest 参数搭配的变量是一个数组，该变量将多余的参数放入数组中。</span>
 
 
 
-dev：webpack-dev-server  --config 
+### 9.同源策略
 
-webpack.config.js //不会生成dist目录
+<font color=blue>协议相同、域名相同、端口相同</font>
+
+举例来说，<span style ="background:pink">`http://www.example.com/dir/page.html`</span>这个网址，<span style="background:red">协议是`http://`，域名是`www.example.com`，端口是`80`（默认端口可以省略）</span>。
 
 
 
@@ -126,13 +116,17 @@ rpx:是响应式开发   像素
 
 <span style="color:deeppink">技巧：控制台  $0 可以直接获取到当前节点</span>
 
-### 构造函数、原型和实例的关系
+### 10.构造函数、原型和实例的关系
+
+[参考链接](https://juejin.cn/post/6844903827326369799)
 
 <span style="background-color:lightyellow">每一个构造函数   都有一个原型(prototype)。 </span>
 
 <span style="background-color:skyblue">原型  中有一个属性指回构造函数。</span>
 
 <span style="background-color:pink">实例  中有一个内部指针指向   原型。</span>
+
+<img src='../前端面试题/src/imgs/原型-构造函数-实例.png'>
 
 <font color=blue>**原型链：**原型链其实是一个链表   原型链的_ _proto_ _相当于链表的next指针</font>
 
@@ -148,6 +142,8 @@ arr  ——> Array.prototype  ——> Object.prototype  ——> null
 
 String、Boolean、Number 、Symbol  的原链以此类推。
 
+### 11.
+
 **for...of 和for....in 区别？**
 
 1.for..of遍历获取的是 对象键值 ，for...in遍历获取的是   对象键名
@@ -157,4 +153,24 @@ String、Boolean、Number 、Symbol  的原链以此类推。
 3–对于数组的遍历,for … in会返回数组中所有可枚举的属性(包括原型链上可枚举的属性),for … of只返回数组的下标对应的属性值
 
 for … of循环的原理其实也是利用了遍历对象内部的iterator接口,将for … of循环分解成最原始的for循环
+
+### 12.
+
+addEventListener 第三个参数是false 表示在冒泡阶段出发监听。第三个参数默认false
+
+### 13.
+
+数组reduce方法：
+
+```js
+//用法：arr.reduce(callback,initialValue)
+callback （执行数组中每个值的函数，包含四个参数）
+
+    1、previousValue （上一次调用回调返回的值，或者是提供的初始值（initialValue））
+    2、currentValue （数组中当前被处理的元素）
+    3、index （当前元素在数组中的索引）
+    4、array （调用 reduce 的数组）
+
+initialValue （作为第一次调用 callback 的第一个参数。）如果没有数组索引从1开始。有数组从0开始遍历。
+```
 
