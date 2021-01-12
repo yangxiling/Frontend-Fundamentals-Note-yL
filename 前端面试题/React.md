@@ -71,7 +71,7 @@ ComponentDidMount
 
 ## 渲染列表，为何使用key
 
- 同Vue。必须用key，切不能是index 和 random
+ 同Vue。必须用key，且不能是index 和 random
 
 diff算法中通过tag和key来判断，这个节点是否是sameNode
 
@@ -312,12 +312,11 @@ import（“./path”）
 {
   test:/\.js$/,
   use:['babel-loader?cacheDirectory'];//1、开启缓存
+  //cacheDirectory：没有改动的代码就不会重新编译，会使用缓存的代码。
   include:path.resolve(_dirname,'src');//2、明确范围
   //exclude：path.resolve(_dirname,'node_modules')  二选一就可以
 }
 ```
-
-cacheDirectory：没有改动的代码就不会重新编译，会使用缓存的代码。
 
 
 

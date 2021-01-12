@@ -438,3 +438,45 @@ css抽离：
 
 #### babel解析语法，webpack处理模块
 
+**新的知识又增加了：**
+
+* manifast 生成小图标类似桌面的快捷应用
+
+* chrome浏览器实现的  workbox库  ==> PWA (程序离线应用)
+
+node.js简单搭建一个web服务端（HTTP server）：
+
+两个可实现（express，koa）
+
+使用express：
+
+1.创建一个空文件-->train-mack
+
+2.touch index.js
+
+3.安装  npm install  express  --save
+
+4.编写express
+
+```js
+const express = require('express');
+const app = express();
+//搭建浏览器接口
+app.get('/',(request,response)=>{
+	response.status(200);
+	response.send('hello express');
+	response.end();
+});
+//搭建一个json接口
+app.get('/rest',(request,response)={
+  response.json({
+  	result:1,
+  	msg:'hello express json'
+	})
+})
+//启动服务
+app.listen(5000);//只需要传入端口号
+```
+
+
+

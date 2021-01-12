@@ -120,7 +120,7 @@ rpx:是响应式开发   像素
 
 [参考链接](https://juejin.cn/post/6844903827326369799)
 
-<span style="background-color:lightyellow">每一个构造函数   都有一个原型(prototype)。 </span>
+<span style="background-color:lightyellow">每一个构造函数   都有一个原型(只有函数才有prototype属性)。 </span>
 
 <span style="background-color:skyblue">原型  中有一个属性指回构造函数。</span>
 
@@ -171,6 +171,6 @@ callback （执行数组中每个值的函数，包含四个参数）
     3、index （当前元素在数组中的索引）
     4、array （调用 reduce 的数组）
 
-initialValue （作为第一次调用 callback 的第一个参数。）如果没有数组索引从1开始。有数组从0开始遍历。
+initialValue （作为第一次调用 callback 的第一个参数。）如果没有 initialValue 数组索引从1开始。有 initialValue 数组从0开始遍历。
 ```
 
