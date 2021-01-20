@@ -253,7 +253,7 @@ const EnhancedComponent = higherOrderComponent(WrappedComponent);
 
 ![image-20201213172114826](../前端面试题/src/imgs/render-Props.png)
 
-### HOC vs Renser Props
+### HOC vs Render Props
 
 * HOC：模式简单，但是会增加组件层级
 * Render  Props：代码简洁，但学习成本高

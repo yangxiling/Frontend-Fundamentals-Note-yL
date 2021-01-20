@@ -67,7 +67,13 @@ ComponentDidMount
 
 ![image-20201208201825915](./src/imgs/changjingti.png)
 
+### setState 后执行什么生命周期
 
+属性（props）发生变化 或者 状态（state）发生变化
+
+可能会引起重新渲染，执行完 setState 是 compomentWillUpdate-->compomentDidUpdate
+
+<img src="./src/imgs/setState后.png" alt="image-20210120183553921" style="zoom:33%;" />
 
 ## 渲染列表，为何使用key
 
@@ -159,7 +165,7 @@ SCU  必须要配合  “不可变值 ”  使用，否则容易出错
 
 
 
-## Component 和 PureComponent、memo有何区别？
+## Component 和 PureComponent、memo有何区别
 
 * `React.PureComponent` 与 `React.Component` 很相似。
 
@@ -188,6 +194,36 @@ SCU  必须要配合  “不可变值 ”  使用，否则容易出错
 * this指向的困扰 
 
 
+
+### React Hooks
+
+useSate（）；可以使用函数定义默认值。useState使用次数不能多也不能少。
+
+useEffect，执行的是副作用，需要在渲染完成后执行
+
+useContext，
+
+useMemo/Callback，有对比返回值，useMemo是在渲染期间完成的 
+
+如果useMemo()里面是是一个函数，useCallback(fn)和它是一样的。
+
+
+
+Hooks优势
+
+* 方便复用状态逻辑
+* 副作用的关注点分离
+* 函数组件无this问题
+
+
+
+#### 生命周期函数如何映射到Hooks？
+
+useEffect（），可以实现
+
+![image-20201228002650287](/Users/yl/Documents/GitHub/Web/前端面试题/src/imgs/React-生命周期.png)
+
+####  类实例成员变量如何映射到Hooks？
 
 
 
@@ -416,7 +452,7 @@ DllReferencePlugin -- 使用dll文件
 
 1、小图片使用 base64编码，不用请求图片了。
 
-2、bundle  +  hash
+2、bundle  +  hash（代码不变的情况下能命中缓存）
 
 3、懒加载（比较大的文件使用懒加载，先把重要的文件加载出来，然后再异步加载大文件）
 
@@ -473,6 +509,4 @@ ES6Module是静态引入，**编译时**就引入
 CommJS是动态引入，**执行时**才会引入
 
 只有ES6 Module 才能静态分析，实现Tree-Shaking
-
-
 

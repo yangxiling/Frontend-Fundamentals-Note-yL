@@ -118,35 +118,30 @@ element.getBoundingClientRect().width/height;
 
 
 
-### :question:3>margin塌陷（或叫margin重叠/边距重叠的问题）(盒模型系列)
+### :question:3.margin塌陷（或叫margin重叠/边距重叠的问题
 
-:pencil2:A: **在标准文档流里。竖直方向的margin不叠加，只取最大的margin展示。（水平方向没有塌陷现象）**
+:pencil2:A: **在标准文档流里。竖直方向的margin不叠加，只取最大的margin展示。（水平方向没有塌陷现象）。**使用BFC可以解决 margin塌陷的问题
 
 **PS：如果盒子脱标了，就不会出现margin塌陷的现象。**
 
-<font color=blue>处理父子元素的关系：**善于用父亲的padding，而不是儿子的margin。来表达父子关系。**</font>
-
-**margin是表示兄弟关系的。padding用来表示父子关系。**
-
-
+处理父子元素的关系：善于用父亲的padding，而不是儿子的margin。来表达父子关系。**margin是表示兄弟关系的。padding用来表示父子关系。**
 
 ### :question:简述 CSS 有哪些上下文类型？
 
-块级格式上下文（BFC）、网格布局格式化上下文（GFC）、自适应格式化上下文（FFC）、行内格式化上下文（IFC）。
+<datails>块级格式上下文（BFC）、网格布局格式化上下文（GFC）、自适应格式化上下文（FFC）、行内格式化上下文（IFC）。
+
+BFC(Block Formatting Context)概念：块级格式化上下文。你可以把它理解成一个独立的区域。 
 
 **BFC(块级格式化上下文)  可以理解为一个独立的区域。**
 
-<font color=deeppink>**BFC原理/布局规则：**</font>
+**BFC原理/BFC布局规则【非常重要】**
 
-1、BFC**内部的子元素**在垂直方向上会发生边距重叠。
+* （1）BFC**内部的**子元素，在垂直方向，**边距会发生重叠**。
+* （2）BFC在页面中是独立的容器，外面的元素不会影响里面的元素，反之亦然。
+* （3）**BFC区域不与旁边的float box区域重叠。**（可以用来清除浮动带来的影响）
+* 计算BFC的高度时，浮动的子元素也参与计算
 
-2、计算BFC高度的时候，浮动的子元素参与计算。
-
-3、**BFC不与旁边的`float box `区域重叠。**
-
-4、BFC在页面中是独立的容器，外面的元素不会影响里面的元素，反之亦然。
-
-**生成BFC方法：**</font>
+**生成BFC方法：**
 
 * <font color=deeppink>float</font>   的值不为  `none`；
 * <font color=deeppink>overflow </font> 的值不为  `visible`；
