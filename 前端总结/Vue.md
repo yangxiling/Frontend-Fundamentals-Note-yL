@@ -182,11 +182,11 @@ components:{
 
  ## 15、Vue 为何是异步渲染，$nextTick有何用？（非常非常重要）
 
-### vue组件是一步渲染的。目的：减少DOM操作次数，提高性能。
+* vue组件是一步渲染的。目的：减少DOM操作次数，提高性能。
 
-### <font color=purple>**异步渲染，将合并多次data修改，一次性更新视图**</font>
+* 异步渲染，将合并多次data修改，一次性更新视图
 
-<font color=red>**$nextTick  待  DOM渲染完   再回调。用来获取   最新的DOM节点**</font>
+* <font color=red> $nextTick  待  DOM渲染完   再回调。用来获取   最新的DOM节点</font>
 
 用法：this.$nextTick(    ()=>{"我是回调函数"}   )
 
