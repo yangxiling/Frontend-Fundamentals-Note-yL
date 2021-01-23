@@ -8,6 +8,8 @@
 
 ## 浏览器-BOM
 
+- [x] [HTTP 1.0、1.1、2.0的主要区别](https://www.wolai.com/q7MGvWsMsAkvL8o94Uzr7K)
+
 ## 跨域通信
 
 ## Vue
