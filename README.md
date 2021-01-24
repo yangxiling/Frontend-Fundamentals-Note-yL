@@ -8,7 +8,12 @@
 
 ## 浏览器-BOM
 
+- [x] [浏览器的缓存机制](https://www.wolai.com/tRDmZ2PMNYkHx1iWS2LLzM)
 - [x] [HTTP 1.0、1.1、2.0的主要区别](https://www.wolai.com/q7MGvWsMsAkvL8o94Uzr7K)
+- [x] [HTTP 和 HTTPS](https://www.wolai.com/5SzchXMZGzsSjWn2Fdmjs7)
+- [x] [对称加密和非对称加密](https://www.wolai.com/o7VDpg28474EuuQnL8bvYG)
+- [x] SSL(https://www.wolai.com/6Y2WF3xfzPcnZVgAxGNqUB)
+- [x] [WebSocket](https://www.wolai.com/6nXf94hritN4e7mGDuppHo)
 
 ## 跨域通信
 
