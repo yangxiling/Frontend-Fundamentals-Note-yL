@@ -23,6 +23,12 @@
 
 ## React
 
+- [x] [JSX本质](https://www.wolai.com/tMoPqxzcH3Cv8q8M8aGk5q)
+- [x] [React事件和DOM事件的区别](https://www.wolai.com/aX6Qx62J8ci7zTCgCFtJzx)
+- [x] [React性能优化](https://www.wolai.com/3h8f2KvZ277FaTcVJ6GjKL)
+- [x] [渲染列表-key](https://www.wolai.com/6i9hLBj4erURmMzGdnNHpz)
+- [ ] [useEffect机制](https://www.wolai.com/cPTEbBrCGiKhc4hKSFMBwG)
+
 ## webpack
 
 
