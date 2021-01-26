@@ -48,6 +48,8 @@
 
 ## 5、computed 有什么特点？
 
+**cumputed有缓存，data不变就不会重新计算**
+
 * 有缓存，开销小，data不变 就不会重新计算（最大的特点）
 * 提高性能
 
@@ -104,7 +106,9 @@ export default{
 
 * **父子**组件props  和  this.$emit(在子组件中使用)
 
-  
+  父-->子，动态传递属性，
+
+  子 -->父，通过$emit('父亲定义的事件名'，‘传递的参数’)触发父组件中函数执行
 
 * **自定义事件 （不限组件间的关系，都可以通过自定义事件实现通讯）**
 
@@ -115,13 +119,15 @@ vm.$on('test', function (msg) {  console.log(msg) })
 vm.$emit('test', 'hi') // => "hi"
 ```
 
-<font color='deeppink'>event</font>.$on ('事件名'，'函数名')   绑定自定义事件
+<font color='deeppink'>event</font>.$on ('事件名'，'this.函数名')   绑定自定义事件
 
 <font color='deeppink'>event</font>.$emit('事件名',<font color=red>'**参数**'</font>)       触发自定义事件
 
 <font color='deeppink'>event</font>.$off('事件名','函数名') 	 销毁自定义事件（必须销毁，否则可能引起内存泄漏）
 
 <font color='deeppink'>event</font>从哪来的呢？---->**event就是vue的实例☟，vue已经实现了自定义事件的能力**
+
+自己写一个文件，然后引入vue，new 一个vue实例导出就可以了。
 
 ```javascript
 import Vue from 'vue'

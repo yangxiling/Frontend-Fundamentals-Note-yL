@@ -5,6 +5,7 @@
 ## CSS
 
 - [x] [盒模型+边距重叠+BFC](https://www.wolai.com/eX2Yo3VP2C1PrWVCsnGDSL)
+- [x] [display:none 和 visibility:hidden](https://www.wolai.com/kmWDzsUyLtFqFX5i7hjGG9)
 - [x] [Flex布局](https://www.wolai.com/uTFnw9rTdgFnaoZsFbnKWL)
 - [x] [有继承性的属性](https://www.wolai.com/bcJgJjifRXHkYosLcEGCwA)
 

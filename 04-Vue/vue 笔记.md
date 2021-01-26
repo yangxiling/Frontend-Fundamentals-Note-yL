@@ -56,7 +56,7 @@ app.$delete()  删除属性
 
 v-text 和{{  }}（数据绑定）  作用基本差不多
 
-v-html 和 innerHTML  作用一样
+v-html 和 innerHTML  作用一样：**有XSS风险，会覆盖子组件**
 
 v-show：
 

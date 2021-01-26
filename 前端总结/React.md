@@ -201,6 +201,14 @@ useSate（）；可以使用函数定义默认值。useState使用次数不能�
 
 useEffect，执行的是副作用，需要在渲染完成后执行
 
+
+
+![image-20210125163854784](/Users/yl/Library/Application Support/typora-user-images/image-20210125163854784.png)
+
+**Clean Callback（返回的毁掉函数）：作用是清除上一次副作用遗留下来的状态。**
+
+
+
 useContext，
 
 useMemo/Callback，有对比返回值，useMemo是在渲染期间完成的 
@@ -221,7 +229,7 @@ Hooks优势
 
 useEffect（），可以实现
 
-![image-20201228002650287](/Users/yl/Documents/GitHub/Web/前端面试题/src/imgs/React-生命周期.png)
+![image-20201228002650287](./src/imgs/React-生命周期.png)
 
 ####  类实例成员变量如何映射到Hooks？
 
@@ -243,11 +251,52 @@ useEffect（），可以实现
 
 ## redux如何进行异步请求
 
-使用异步 action
+`import thunk from 'redux-thunk';//专门支持异步的action中间件`
 
-如 redux-thunk 
+```js
+import {
+  createStore,
+  combineReducers,
+  applyMiddleware
+} from 'redux';
+import reducers from './reducers';
+import thunk from 'redux-thunk';//专门支持异步的action中间件
+
+export default createStore(
+  combineReducers(reducers),
+  //定义需要使用的 state
+  {
+    from: '北京',
+    to: '上海',
+    isCitySelectorVisible: false,//城市选择浮层 开关
+    currentSelectingLeftCity: false,
+  },
+  applyMiddleware(thunk)
+);
+//如何变更 store  中 state 的数据的？
+//通过 actionCreater 函数创建 action 对象，
+//让 action 对象通过 reducer 函数返回新的数据，就是变更后的数据了。
+```
 
 
+
+# 如何变更store中的state的数据的？***
+
+1、 通过 actionCreater 函数创建 action 对象
+
+2、让这个新的 action 对象通过 reducer 函数返回新的数据，就是变更后的数据了。
+
+**action.js**
+
+* action对象只有两个字段， 1.type   2.payload
+
+* payload 中的结构取决于 type，type是字符串 并且在 actionCreater 和 reducer 中都要用到
+
+**reducers.js**
+
+* 一系列reducer函数的集合
+* 根据 state 和 actionType 来定义reducer
+* 其实就是在 state 字段的维度 去遍历所有的 actionType 进而得出这个 state 字段的最新值
 
 ## react-router如何配置懒加载
 
@@ -279,7 +328,7 @@ useEffect（），可以实现
 
 都是数据驱动视图
 
-都使用vdom操作DOM
+都使用vdom操作DOM,render函数一样
 
 ### 区别
 
@@ -288,8 +337,6 @@ React使用JSX拥抱  JS（就是在写js），Vue使用模板拥抱   html（�
 React是函数式编程，Vue是面向对象编程。
 
 事件不一样。React-SyntheticEvent，Vue-原生event
-
-React需要自力更生，Vue把想要的都给你
 
 
 

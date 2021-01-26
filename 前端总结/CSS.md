@@ -126,7 +126,7 @@ element.getBoundingClientRect().width/height;
 
 处理父子元素的关系：善于用父亲的padding，而不是儿子的margin。来表达父子关系。**margin是表示兄弟关系的。padding用来表示父子关系。**
 
-### :question:简述 CSS 有哪些上下文类型？
+### :question:简述 CSS 有哪些上下文类型？ 
 
 <datails>块级格式上下文（BFC）、网格布局格式化上下文（GFC）、自适应格式化上下文（FFC）、行内格式化上下文（IFC）。
 
@@ -204,41 +204,7 @@ BFC(Block Formatting Context)概念：块级格式化上下文。你可以把它
 
 ### :question:flex 常用的属性有哪些？flex: 1 1 0 是什么意思？
 
-:pencil2:A：
-
-<font color=blue>**fater元素：**</font>
-
-**1、设置子容器沿主轴排列：justify-content**
-
-位置排列：`flex-start ` , `flex-end` , `center`
-
-分布排列：`space-between` , `space-around`
-
-**2、设置子容器如何沿交叉轴排列：align-items**
-
-位置排列：`flex-start , flex-end , center`
-
-基线排列：`baseline`
-
-拉伸排列：`stretch`
-
-<font color=deeppink>**son元素：**</font>
-
-**1、flex  自动填充父元素剩余空间，子容器的伸缩比例由flex属性确定**
-
-flex：flex-grow| flex-shrink| flex-basis
-
-**2、单独设置子容器如何沿交叉轴排列：align-self**
-
-说明：每个子容器也可以单独定义沿交叉轴排列的方式，**此属性的可选值与父容器`align-items`属性完全一致，如果两者同时设置则以子容器的`align-self`属性为准。**
-
-位置排列：flex-start , flex-end , center
-
-基线排列：baseline
-
-拉伸排列：stretch
-
-
+- [ ] [Flex布局](https://www.wolai.com/uTFnw9rTdgFnaoZsFbnKWL)
 
 ### :question: rem 与 em 的区别以及使用场景
 
