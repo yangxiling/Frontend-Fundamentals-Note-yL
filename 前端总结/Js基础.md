@@ -24,6 +24,8 @@ __声明的最佳实践风格就是: 不使用var。const优先，let次之__
 
 基本包装类（包装对象）：String、Number、Boolean。**ECMAScript还提供了三个特殊的引用类型Boolean,String,Number.我们称这三个特殊的引用类型为基本包装类型，也叫包装对象**.
 
+https://segmentfault.com/a/1190000008472264
+
 ### 遍历对象的方法？
 
 1.for...in  会遍历对象（<font color='red'>自身的 和  继承的</font>）可枚举属性，不会遍历Symbol【尽量不要用for..in,而使用Object.keys()】

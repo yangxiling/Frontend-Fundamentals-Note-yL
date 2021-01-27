@@ -2,12 +2,16 @@
 
 ## js基础-Ecmascript、DOM
 
+- [x] [js阻塞页面](https://www.wolai.com/xzV4p5B3w1tKm1So9QG1FB)
+- [x] [CSS阻塞页面和JS运行](https://www.wolai.com/9pScMSNbMcZYAwJr17BDsa)
+
 ## CSS
 
 - [x] [盒模型+边距重叠+BFC](https://www.wolai.com/eX2Yo3VP2C1PrWVCsnGDSL)
 - [x] [display:none 和 visibility:hidden](https://www.wolai.com/kmWDzsUyLtFqFX5i7hjGG9)
 - [x] [Flex布局](https://www.wolai.com/uTFnw9rTdgFnaoZsFbnKWL)
 - [x] [有继承性的属性](https://www.wolai.com/bcJgJjifRXHkYosLcEGCwA)
+- [x] 
 
 ## 浏览器-BOM
 
