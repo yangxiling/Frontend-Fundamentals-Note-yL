@@ -4,6 +4,7 @@
 
 - [x] [js阻塞页面](https://www.wolai.com/xzV4p5B3w1tKm1So9QG1FB)
 - [x] [CSS阻塞页面和JS运行](https://www.wolai.com/9pScMSNbMcZYAwJr17BDsa)
+- [x] [节流和防抖](https://www.wolai.com/oiwM3VAfA4tZzpDiusTPnc)
 
 ## CSS
 
@@ -16,7 +17,14 @@
 ## 浏览器-BOM
 
 - [x] [浏览器的缓存机制](https://www.wolai.com/tRDmZ2PMNYkHx1iWS2LLzM)
+- [x] [同步 和 异步](https://www.wolai.com/fiEtLSyXQYVHVNBswi16Az)
+- [x] [进程 和 线程的区别](https://www.wolai.com/4Kvm3a91jqrLfsYP2HPzkY)
+- [x] [浏览器的进程](https://www.wolai.com/fVK4uvBrrToAjzzcHTihoE)
+
+### 通信协议
+
 - [x] [HTTP 1.0、1.1、2.0的主要区别](https://www.wolai.com/q7MGvWsMsAkvL8o94Uzr7K)
+- [ ] [HTTP报文结构](https://www.wolai.com/nd1Aw9s21NrtpNhaEVXYpT)
 - [x] [HTTP 和 HTTPS](https://www.wolai.com/5SzchXMZGzsSjWn2Fdmjs7)
 - [x] [对称加密和非对称加密](https://www.wolai.com/o7VDpg28474EuuQnL8bvYG)
 - [x] [SSL](https://www.wolai.com/6Y2WF3xfzPcnZVgAxGNqUB)
