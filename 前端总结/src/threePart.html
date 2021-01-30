@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>实现三栏布局</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    /* float方法实现  一定要注意三个盒子的顺序  即：left right center */
+    /* .container{
+      border: salmon solid 2px;
+    }
+    .container div{
+      height: 200px;
+    }
+    .container .left{
+      float: left;
+      width: 30%;
+      background-color: orange;
+    }
+    .container .right{
+      float: right;
+      width: 30%;
+      background-color: pink;
+    }
+    .container .center{
+      background-color: green;
+    } */
+
+    /* 方法二 position定位  */
+    /* .container{
+      position: relative;
+      border: salmon solid 2px;
+    }
+    .container div{
+      height: 200px;
+    }
+    .container .left{
+      position: absolute;
+      left: 0;
+      width: 30%;
+      background-color: orange;
+    }
+    .container .center{
+      position: absolute;
+      left: 30%;
+      right: 30%;
+      background-color: green;
+    }
+    .container .right{
+      position: absolute;
+      right: 0;
+      width: 30%;
+      background-color: pink;
+    } */
+
+    /* 方法三 flex */
+    /* .container {
+      display: flex;
+      border: salmon solid 2px;
+    }
+
+    .container div {
+      height: 200px;
+    }
+    .container .left {
+      flex: 1;
+      background-color: orange;
+    }
+
+    .container .center {
+      flex: 1;
+      background-color: green;
+    }
+
+    .container .right {
+      flex: 1;
+      background-color: pink;
+    } */
+
+
+    /* 方法四  网格布局 grid CSS3 新*/
+    .container {
+      display: grid;
+      border: salmon solid 2px;
+      grid-template-rows: 100px;
+      grid-template-columns: 30% auto 30%;
+    }
+
+    .container .left {
+      background-color: orange;
+    }
+
+    .container .center {
+      background-color: green;
+    }
+
+    .container .right {
+      background-color: pink;
+    }
+  </style>
+</head>
+
+<body>
+  <div class='container'>
+    <div class='left'>left</div>
+    <div class='center'>center</div>
+    <div class='right'>right</div>
+  </div>
+</body>
+
+</html>
