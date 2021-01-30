@@ -34,6 +34,8 @@
 
 ## Vue
 
+- [x] [v-model双向数据绑定](https://www.wolai.com/bDK7JkWs3vzXznyATQ3ciG)
+
 ## React
 
 - [x] [JSX本质](https://www.wolai.com/tMoPqxzcH3Cv8q8M8aGk5q)
