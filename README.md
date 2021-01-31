@@ -2,6 +2,8 @@
 
 ## js基础-Ecmascript、DOM
 
+- [ ] 
+- [ ] [原型、继承](https://www.wolai.com/kvvih8aJQH9qyK9kgkSFGm)
 - [x] [js阻塞页面](https://www.wolai.com/xzV4p5B3w1tKm1So9QG1FB)
 - [x] [CSS阻塞页面和JS运行](https://www.wolai.com/9pScMSNbMcZYAwJr17BDsa)
 - [x] [节流和防抖](https://www.wolai.com/oiwM3VAfA4tZzpDiusTPnc)
