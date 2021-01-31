@@ -12,7 +12,7 @@
 - [x] [display:none 和 visibility:hidden](https://www.wolai.com/kmWDzsUyLtFqFX5i7hjGG9)
 - [x] [Flex布局](https://www.wolai.com/uTFnw9rTdgFnaoZsFbnKWL)
 - [x] [有继承性的属性](https://www.wolai.com/bcJgJjifRXHkYosLcEGCwA)
-- [x] 
+- [x] [三角形、扇形](https://www.wolai.com/mCPFYUMW1nS4RiJCyjPqrx)
 
 ## 浏览器-BOM
 
