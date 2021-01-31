@@ -1,6 +1,6 @@
 # 前端知识再总结
 
-## js基础-Ecmascript、DOM
+## js基础-ECMAScript、DOM
 
 - [ ] 
 - [ ] [原型、继承](https://www.wolai.com/kvvih8aJQH9qyK9kgkSFGm)
