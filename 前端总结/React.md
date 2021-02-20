@@ -25,7 +25,7 @@ render函数执行完返回Virtual  DOM  tree（虚拟DOM树）
 
 ## React事件和DOM事件的区别（Vue和React对比，非常重要）
 
-Vue中的event事件是原生事件（MouseEvent）。就是DOM事件。
+Vue中的event事件是原生事件（MouseEvent）。就是DOM事件
 
 1、React中的event事件不是原生，是合成事件--->SyntheticEvent。但是模拟出了 DOM 事件所有能力。
 

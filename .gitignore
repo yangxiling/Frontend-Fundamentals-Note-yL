@@ -1,1 +1,5 @@
 
+# 忽略所有.DS_store文件
+*.DS_store
+
+*.gitignore

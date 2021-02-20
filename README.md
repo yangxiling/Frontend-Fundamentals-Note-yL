@@ -1,9 +1,11 @@
-# 前端知识再总结
+系统性再一次总结前端知识，会有不一样的收获 ^-^。
+
+# 前端知识总结
 
 ## js基础-ECMAScript、DOM
 
 - [ ] 
-- [ ] [原型、继承](https://www.wolai.com/kvvih8aJQH9qyK9kgkSFGm)
+- [x] [原型、继承](https://www.wolai.com/kvvih8aJQH9qyK9kgkSFGm)
 - [x] [js阻塞页面](https://www.wolai.com/xzV4p5B3w1tKm1So9QG1FB)
 - [x] [CSS阻塞页面和JS运行](https://www.wolai.com/9pScMSNbMcZYAwJr17BDsa)
 - [x] [节流和防抖](https://www.wolai.com/oiwM3VAfA4tZzpDiusTPnc)
