@@ -42,22 +42,22 @@
 
 
 
-## 4、如何自己实现v-model？
+## 4、实现v-model
 
 ![image-20201207005931931](./src/imgs/v-model.png)
 
-## 5、computed 有什么特点？
+## 5、computed 特点
 
 **cumputed有缓存，data不变就不会重新计算**
 
 * 有缓存，开销小，data不变 就不会重新计算（最大的特点）
 * 提高性能
 
-## 6、为何组件的data必须是一个函数？
+## 6、为何组件的data必须是一个函数
 
 **因为每当组件复用，就是于对这个组件Class实例化。**如果data不是函数，那么被复用组件的数据就都共享了。data是函数  每个组件实例都有自己的私有数据空间。 就达到了作用域隔离的效果，他们只负责维护自己的数据，不会造成混乱。
 
-## 7、什么是作用域插槽？
+## 7、作用域插槽？
 
 <font color=suntan>插槽：父组件要向   子组件中    传递的元素-->slot</font>( slot放在子组件中占个位置，也就是个插槽)
 
@@ -69,7 +69,7 @@
 * JS是单线程，ajax是异步请求数据
 * 放在mounted之前没有用，只会让逻辑更加混乱
 
-## 9、如何将组件所有props传递给子组件？
+## 9、如何将组件所有props传递给子组件
 
 Ps：将一个组件的所有属性，不分大小、不分多少  全部传递给子组件
 
@@ -102,7 +102,7 @@ export default{
 
 
 
-## 11、Vue组件如何通讯（常见）？
+## 11、Vue组件通讯
 
 * **父子**组件props  和  this.$emit(在子组件中使用)
 
@@ -136,7 +136,7 @@ export default new Vue();//直接new一个vue的实例
 
 * vuex（所有组件都可以通讯）
 
-## 12、多个组件有相同的逻辑，如何抽离？
+## 12、抽离多个组件相同的逻辑
 
 **抽离多组件公共的业务逻辑，可以使用mixin**
 
@@ -162,7 +162,7 @@ data(){
 
 <span style="background-color:skyblue">Vue3中 提出了Composition API来解决mixin的缺点。</span>
 
-## 13、何时要使用异步组件？（很重要，常考）
+## 13、异步组件（很重要，常考）
 
 * **加载大组件**（比如加载一个编辑器、图标）
 * **路由异步加载**（路由切换的时候）
@@ -176,7 +176,7 @@ components:{
 }
 ```
 
-## 14、何时需要使用keep-alive？
+## 14、何时需要使用keep-alive
 
 * 缓存组件，不需要重复渲染
 
@@ -186,7 +186,7 @@ components:{
 
   
 
- ## 15、Vue 为何是异步渲染，$nextTick有何用？（非常非常重要）
+ ## 15、Vue 为啥是异步渲染，$nextTick作用
 
 * vue组件是一步渲染的。目的：减少DOM操作次数，提高性能。
 
@@ -198,7 +198,7 @@ components:{
 
 
 
-## 16、Vuex中 action 和 mutation 有何区别？
+## 16、Vuex中 action 和 mutation 区别
 
 * action中处理异步（所有异步都在action中处理），mutation不可以（同步）
 
@@ -248,7 +248,7 @@ components:{
 
 
 
-## 18、监听 data 变化的核心API是什么？
+## 18、监听 data 变化的核心API
 
 **核心API：Object.defineProperty**
 
@@ -276,7 +276,7 @@ Vue3.0 使用Proxy 代替，但是Proxy也不是完美的，有兼容性的问�
 
   
 
-## 19、Vue如何监听数组变化？
+## 19、Vue监听  数组   变化
 
 * 首先Object.defineProperty 不能监听数组变化
 
@@ -292,7 +292,7 @@ Vue3.0 使用Proxy 代替，但是Proxy也不是完美的，有兼容性的问�
 
 
 
-## 20、谈谈对  MVVM  的理解
+## 20、  MVVM  
 
 第一步先说一下组件化（“很久以前”就有组件化，并不是新发明的）。比如node.js中就有组件。
 
@@ -308,13 +308,13 @@ Vue3.0 使用Proxy 代替，但是Proxy也不是完美的，有兼容性的问�
 
 
 
-## 21、请描述响应式原理？（非常重要）
+## 21、响应式原理（非常重要）
 
 1、监听data变化
 
 2、组件渲染和更新的流程☟
 
-## 22、描述组件渲染和更新的过程？
+## 22、组件渲染和更新的过程
 
 ![image-20201205205329311](./src/imgs/render.png)
 
@@ -352,7 +352,7 @@ render函数执行完，生成vnode
 * <font color=blue>tag不相同，则直接删掉重建，不再深度比较。</font>
 * <font color=blue>tag和key都相同，则认为是相同节点，不再深度比较</font>
 
-## 24、简述diff算法的过程  
+## 24、diff算法的过程  
 
 首先要从vdom的使用开始
 
@@ -363,7 +363,7 @@ render函数执行完，生成vnode
 
 
 
-## 25、何时需要使用beforeDes troy？
+## 25、啥时候用beforeDes troy
 
 * 解绑自定义事件  event.$off
 * 清除定时器
@@ -407,7 +407,7 @@ render函数执行完，生成vnode
 
 
 
-## 28、如何配置 Vue-router 异步加载？
+## 28、配置 Vue-router 异步加载
 
 ```javascript
 //首先，配置path。然后component写一个箭头函数  使用import引入路径
@@ -419,7 +419,7 @@ render函数执行完，生成vnode
 
 
 
-## 29、Vue常见的性能优化方式  0
+## 29、Vue性能优化方式  
 
 <font color=gree>**Vue 层面优化：**</font>
 

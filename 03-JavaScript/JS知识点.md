@@ -25,11 +25,7 @@
 
 __声明的最佳实践风格就是: 不使用var。const优先，let次之__
 
-### 4.
 
-**typeof 操作符：返回“object”表示返回的值为 对象 或 null；****
-
-其他数据类型返回值一一对应。
 
 ### 5.
 
@@ -126,7 +122,7 @@ rpx:是响应式开发   像素
 
 <span style="background-color:pink">实例  中有一个内部指针指向   原型。</span>
 
-<img src='../前端面试题/src/imgs/原型-构造函数-实例.png'>
+<img src='../前端总结/src/imgs/原型-构造函数-实例.png'>
 
 <font color=blue>**原型链：**原型链其实是一个链表   原型链的_ _proto_ _相当于链表的next指针</font>
 

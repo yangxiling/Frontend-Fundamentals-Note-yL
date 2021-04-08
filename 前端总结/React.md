@@ -1,6 +1,6 @@
 **create-react-app 创建项目**
 
-## 什么是纯函数
+## 纯函数
 
 一个函数的返回结果只依赖于它的参数，并且在执行过程中没有任何副作用。这样的函数称之为纯函数。
 
@@ -13,7 +13,7 @@
 
 如 arr1 = arr.slice()
 
-## JSX本质是什么？（对比vue模板编译）
+## JSX本质（对比vue模板编译）
 
 <span style="background-color: pink">**通过React.createElement("tag", {props}, children)函数     --->    返回一个vnode    ---->     vnode再根据patch函数，决定节点的渲染情况**</span>
 
@@ -55,7 +55,7 @@ Vue中的event事件是原生事件（MouseEvent）。就是DOM事件
 
 注意SCU
 
-## React发起ajax应该在哪个生命周期
+## React发起ajax在哪个生命周期
 
 同Vue
 
@@ -77,7 +77,7 @@ ComponentDidMount
 
 ## 渲染列表，为何使用key
 
- 同Vue。必须用key，且不能是index 和 random
+
 
 diff算法中通过tag和key来判断，这个节点是否是sameNode
 
@@ -85,7 +85,7 @@ diff算法中通过tag和key来判断，这个节点是否是sameNode
 
 
 
-## 组件之间如何通讯？
+## 组件通讯
 
  父子组件props
 
@@ -95,7 +95,7 @@ Redux和Context
 
 
 
-## 函数组件 和 class组件 区别
+## 函数组件 和 class组件 
 
 纯函数，输入props，输出JSX
 
@@ -105,7 +105,7 @@ Redux和Context
 
 
 
-## 什么是受控组件，非受控组件？
+## 受控组件 & 非受控组件
 
 React的state成为表单元素的“唯一数据源”，
 
@@ -119,7 +119,7 @@ React的state成为表单元素的“唯一数据源”，
 
 
 
-## 何时使用异步组件
+## 啥时候用异步组件
 
 同Vue
 
@@ -129,7 +129,7 @@ React的state成为表单元素的“唯一数据源”，
 
  
 
-## 多个组件有公共的逻辑，如何抽离？
+## 抽离多个组件公共逻辑
 
 高阶组件 HOC
 
@@ -137,7 +137,7 @@ Render  Props
 
 mixin已经被react废弃（和Vue的mixin一样的）
 
-## Context是什么，如何应用？
+## Context
 
  父组件，向其下所有子孙组件传递信息
 
@@ -145,7 +145,7 @@ mixin已经被react废弃（和Vue的mixin一样的）
 
 复杂的公共信息，请用redux（比如数据管理，业务数据比较复杂）
 
-## shouldComponentUpdate 用途
+## shouldComponentUpdate 
 
 ```javascript
 shouldComponentUpdate ( nextProps,nextState) {
@@ -165,7 +165,7 @@ SCU  必须要配合  “不可变值 ”  使用，否则容易出错
 
 
 
-## Component 和 PureComponent、memo有何区别
+## Component 和 PureComponent、memo区别
 
 * `React.PureComponent` 与 `React.Component` 很相似。
 
@@ -183,9 +183,7 @@ SCU  必须要配合  “不可变值 ”  使用，否则容易出错
 
 ![image-20201212235611410](./src/imgs/memo.png)
 
-
-
-## 简述 React 中的 Effect Hook 机制0
+##  React 中的 Effect Hook 
 
 类组件的问题：
 
@@ -235,13 +233,13 @@ useEffect（），可以实现
 
 
 
-## 简述 React setstate 原理
+## React setstate 原理
 
 
 
 
 
-## redux单项数据流（会写，考频高）
+## redux单项数据流（很重要，我还不太理解）
 
 
 
@@ -249,7 +247,7 @@ useEffect（），可以实现
 
 
 
-## redux如何进行异步请求
+## redux进行异步请求
 
 `import thunk from 'redux-thunk';//专门支持异步的action中间件`
 
@@ -280,7 +278,7 @@ export default createStore(
 
 
 
-# 如何变更store中的state的数据的？***
+# 变更store中的state的数据***
 
 1、 通过 actionCreater 函数创建 action 对象
 
@@ -298,7 +296,7 @@ export default createStore(
 * 根据 state 和 actionType 来定义reducer
 * 其实就是在 state 字段的维度 去遍历所有的 actionType 进而得出这个 state 字段的最新值
 
-## react-router如何配置懒加载
+## react-router 配置懒加载
 
  ![image-20201208203224390](/Users/yl/Library/Application Support/typora-user-images/image-20201208203224390.png)
 
@@ -306,7 +304,7 @@ export default createStore(
 
 
 
-## React性能优化  (很重要)
+## React性能优化
 
 渲染列表使用key
 
@@ -344,7 +342,7 @@ React是函数式编程，Vue是面向对象编程。
 
 # <font color=steelblue>webpack</font>
 
-### 1、前端代码为何要进行构建和打包？
+### 1、前端代码为何要进行构建和打包
 
 **代码层面：**
 
@@ -362,7 +360,7 @@ React是函数式编程，Vue是面向对象编程。
 
 集成公司构建规范（提测、上线等）
 
-#### 2、module、chunk、bundle 分别什么意思，有何区别？
+#### 2、module、chunk、bundle 分别什么意思，区别
 
 module - 各个源码文件(html\js\css、图片等文件)，webpack中一切皆模块。
 
@@ -370,13 +368,13 @@ chunk - 多模块合成的代码，如entry入口文件 、  import( )、 splitC
 
 bundle - 最终的输出的文件（一般是打包的chunk的文件输出）
 
-#### 3、loader 和 plugin 的区别？
+#### 3、loader 和 plugin 的区别
 
 loader 模块转换器，如 scss-->css。把相应的文件转换成另一种文件。
 
 plugin 扩展插件，如 HtmlWebpackPlugin，把js、css文件塞进相应的html文件中去。
 
-#### 4、webpack 如何实现懒加载？
+#### 4、webpack 实现懒加载
 
 import（“./path”）
 
@@ -384,7 +382,7 @@ import（“./path”）
 
 结合 Vue-router  React-router 异步加载路由
 
-#### <font color=DarkMagenta>webpack常见性能优化</font>
+#### <font color=DarkMagenta>webpack性能优化</font>
 
 **优化打包构建速度 -- 开发体验和效率**
 
@@ -521,11 +519,11 @@ module.export={
 }
 ```
 
-### 如何产出一个lib
+### 怎么产出lib包
 
 <img src="./src/imgs/产出lib.png" alt="image-20201218162804810" style="zoom:50%;" />
 
-### babel和webpack区别？
+### babel和webpack区别
 
 babel -- js新语法是解析工具，不关心模块化
 
@@ -543,13 +541,13 @@ core-js是处理 ES6、 ES7等语法的兼容性问题的工具。但是core-js�
 
 
 
-### 为什么 Proxy不能被Polyfill？
+### 为什么 Proxy不能被Polyfill
 
 <span style="background-color:lightyellow">因为 Proxy的功能无法用原生的某个方法来模拟。</span>
 
 比如Class可以用function模拟、Promise可以用callback模拟。但是Proxy的功能Object.defineProperty() 无法模拟。
 
-### ES6 Module 和 CommonJs区别？
+### ES6 Module 和 CommonJs区别
 
 ES6Module是静态引入，**编译时**就引入
 

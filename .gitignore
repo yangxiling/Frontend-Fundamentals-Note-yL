@@ -3,3 +3,6 @@
 *.DS_store
 
 *.gitignore
+
+# 忽略名称中末尾为ignore的文件夹
+*ignore/
