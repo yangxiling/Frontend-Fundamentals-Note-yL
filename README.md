@@ -13,6 +13,64 @@
 - [x] [构造函数、原型、实例](https://www.wolai.com/vZD1Gbqqsocni4BUJSocpq)
 - [x] [原型、继承](https://www.wolai.com/kvvih8aJQH9qyK9kgkSFGm)
 
+### 原型链+继承+类型判断 + new
+
+[Js的数据类型](https://www.wolai.com/di3c2YxFmgSxMQ8dVNSfhj)
+
+[判断数据类型](https://www.wolai.com/44Jsf4EcRQdB19VpLkmqd9)
+
+[构造函数、原型对象、实例](https://www.wolai.com/vZD1Gbqqsocni4BUJSocpq)
+
+[继承方式](https://www.wolai.com/kvvih8aJQH9qyK9kgkSFGm)
+
+[New操作符](https://www.wolai.com/qLWsQbqk3bqDUyPAaLTJ9Z)
+
+### 对象 + 函数相关
+
+[箭头函数 vs 普通函数](https://www.wolai.com/9iqbtiq4FEVr5X73MARA71)
+
+[this指向问题](https://www.wolai.com/xwbwy49ESWB3bkLMYGSpqc)
+
+[深拷贝、浅拷贝](https://www.wolai.com/dCgCUm7keWKLcb9e4UDVaf)
+
+### 运算符
+
+[扩展运算符/判断运算符(ES2020)](https://www.wolai.com/c1qXfcAGrWsht9xeLdhHCu)
+
+### 基础应用
+
+[节流、防抖](https://www.wolai.com/oiwM3VAfA4tZzpDiusTPnc)
+
+### 作用域 + 闭包
+
+[var、let、const](https://www.wolai.com/cd9yc3FBPM1PNrYcZwX4f3)
+
+[作用域链](https://www.wolai.com/3hdETMAK5mmJuUo3C4n91Q)
+
+[闭包](https://www.wolai.com/qv3E4MfT9fkEQ79awsi6nt)
+
+### 页面加载 + 渲染相关
+
+[js阻塞页面](https://www.wolai.com/xzV4p5B3w1tKm1So9QG1FB)
+
+[CSS阻塞页面和JS运行](https://www.wolai.com/9pScMSNbMcZYAwJr17BDsa)
+
+[从输入URL到页面显示过程](https://www.wolai.com/rqKeqCeMeW4eh3H2g6WsKn)
+
+[重绘 和 回流（重绘）](https://www.wolai.com/jMpaZQ6PGTps6ZL8G3CYfr)
+
+### event loop + 同步异步
+
+[异步加载、懒加载](https://www.wolai.com/jpSkL38CeSHk5oJXt7NrF3)
+
+### ajax  和  跨域
+
+[ajax及 状态码](https://www.wolai.com/teqzf4a7CYWVQs8gM5JUVX)
+
+[ajax中get和post区别](https://www.wolai.com/q81kXR8EVLZYaar3xZKNxF)
+
+[跨域问题](https://www.wolai.com/ek74ixoMStTbbEw4BwPwHB)
+
 ## CSS
 
 - [x] [盒模型+边距重叠+BFC](https://www.wolai.com/eX2Yo3VP2C1PrWVCsnGDSL)
@@ -36,8 +94,6 @@
 - [x] [对称加密和非对称加密](https://www.wolai.com/o7VDpg28474EuuQnL8bvYG)
 - [x] [SSL](https://www.wolai.com/6Y2WF3xfzPcnZVgAxGNqUB)
 - [x] [WebSocket](https://www.wolai.com/6nXf94hritN4e7mGDuppHo)
-
-### 跨域通信
 
 ## Vue
 
