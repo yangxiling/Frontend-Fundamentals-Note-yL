@@ -248,7 +248,7 @@ components:{
 
 
 
-## 18、监听 data 变化的核心API
+## 18、双向数据绑定--->监听 data 变化的核心API
 
 **核心API：Object.defineProperty**
 
@@ -426,7 +426,7 @@ render函数执行完，生成vnode
 * 合理使用v-show  和 v-if
 * 合理使用computed（有缓存，提高性能）
 * v-for 时加 key，以及避免和 v-if 同时使用（因为v-for 优先级更高，每次v-for，v-if都要重新计算一遍。这是对性能的一种浪费）
-* 自定义事件、DOM事件及时销毁（不销毁可能导致内存泄漏。可能页面就会越用越卡，越用越卡直到卡死为止）
+* 自定义事件、DOM事件及时销毁（不销毁可能导致内存泄漏）
 * 合理使用异步组件（针对比较大的组件）
 * 合理使用keep-alive（不需要重复渲染的地方，用keep-alive缓存下来，不要渲染）
 * data层级不要太深，尽量扁平化 
@@ -435,3 +435,5 @@ render函数执行完，生成vnode
 
 * 使用 vue-loader 在开发环境做模板编译（预编译）
 * 使用SSR
+
+![lifecycle](/Users/yl/Desktop/lifecycle.png)

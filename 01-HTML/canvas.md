@@ -2,9 +2,9 @@ canvas:2D
 
 <span style="color:orange">标准的鼠标点击在  canvas中  方法：</span>
 
-<font color=blue>**x=event.clientX+canvas.getBoundingClientRect().left;**</font>
+<font color=blue>**x=event.clientX+ele.getBoundingClientRect().left;**</font>
 
-<span style='color:blue'>**y=event.clientY+canvas.getBoundingClientRect().top;**</span>
+<span style='color:blue'>**y=event.clientY+ele.getBoundingClientRect().top;**</span>
 
 <span style='color:blue'>**getBoundingClientRect():  是JS方法**</span>
 

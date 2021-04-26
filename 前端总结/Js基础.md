@@ -50,9 +50,9 @@ https://segmentfault.com/a/1190000008472264
 
 ##  6. 简述 Javascript 原型以及原型链
 
-一个函数在创建的时候都会在其内部初始化一个属性，就是prototype（原型）。
+一个函数在创建的时候都会在其内部初始化一个属性，属性名是prototype（原型）。
 
-当我们访问对象属性的时候，首先会在这个对象的内部进行查找，如果找不到就会到它的原型上查找，它的原型还会有自己的原型，就这样一级一级查找下去就形成了原型链。
+当我们访问对象属性的时候，首先会在这个对象的内部进行查找，如果找不到就会到它的原型对象上查找，它的原型还会有自己的原型，就这样一级一级查找下去就形成了原型链。
 
 ## 7. 简述 Javascript 中 this 的指向有哪些？
 
@@ -110,11 +110,11 @@ https://segmentfault.com/a/1190000008472264
 
 ## Javascript 可以保存的最大数值是多少
 
-js可以表示的最大数值保存在number.MAX_VALUE中，可以表示的最小数值保存在number.MIN_VALUE中
+js可以表示的最大数值保存在Number.MAX_VALUE中，可以表示的最小数值保存在Number.MIN_VALUE中
 
- number.MAX_VALUE :1.797e+308
+ Number.MAX_VALUE :1.797e+308
 
-number.MIN_VALUE:5e-324;  
+Number.MIN_VALUE:5e-324;  
 
 ## promise有哪些状态？简述Promise.all的实现原理。
 

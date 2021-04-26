@@ -71,7 +71,7 @@ ComponentDidMount
 
 属性（props）发生变化 或者 状态（state）发生变化
 
-可能会引起重新渲染，执行完 setState 是 compomentWillUpdate-->compomentDidUpdate
+**可能会**引起重新渲染，执行完 setState 是 compomentWillUpdate-->compomentDidUpdate
 
 <img src="./src/imgs/setState后.png" alt="image-20210120183553921" style="zoom:33%;" />
 
@@ -83,7 +83,15 @@ diff算法中通过tag和key来判断，这个节点是否是sameNode
 
 减少渲染次数，提升渲染性能
 
+tag和key相同，就会认为是相同节点，如果属性有变化只会发生局部更新；
 
+如果tag和key不同就会发生销毁重建。
+
+**一般用于纯展示的组件，不会发生其他变更，key可以使用index，或者其他任何不相同的值作为key。因为不会发生diff，就不会用到key。**
+
+推荐使用index作为key的情况：**分页渲染列表的时候，就很适合使用index来做key。这样不会频繁产生组件的销毁重建，只是局部更新内容**
+
+如果是有非受控组建存在，那一定要定义独一无二的key。来配合diff算法实现渲染过程。
 
 ## 组件通讯
 
@@ -137,13 +145,33 @@ Render  Props
 
 mixin已经被react废弃（和Vue的mixin一样的）
 
-## Context
+## Context 
 
- 父组件，向其下所有子孙组件传递信息
+API用法：createContext('');
 
-如一些简单的公共信息：主题色、语言等
+父组件，向其下所有子孙组件传递信息
+
+如一些简单的公共信息：主题色、语言等 
 
 复杂的公共信息，请用redux（比如数据管理，业务数据比较复杂）
+
+## Lazy
+
+![image-20210418231247507](/Users/yl/Library/Application Support/typora-user-images/image-20210418231247507.png)
+
+
+
+## UseRef
+
+1.（父组件 ）专门负责获取 **(子组件/dom元素) **句柄的(定义的方法)
+
+以前只有class组件中可以使用  ctreateRef，函数组件没法用
+
+现在可以使用 useRef()  --->一个Hook函数
+
+2.useRef() --特有用法：渲染周期之间  共享数据的存储
+
+
 
 ## shouldComponentUpdate 
 
@@ -193,7 +221,7 @@ SCU  必须要配合  “不可变值 ”  使用，否则容易出错
 
 
 
-### React Hooks
+### React Hooks函数
 
 useSate（）；可以使用函数定义默认值。useState使用次数不能多也不能少。
 
@@ -201,17 +229,9 @@ useEffect，执行的是副作用，需要在渲染完成后执行
 
 
 
-![image-20210125163854784](/Users/yl/Library/Application Support/typora-user-images/image-20210125163854784.png)
+<img src="/Users/yl/Library/Application Support/typora-user-images/image-20210125163854784.png" alt="image-20210125163854784" style="zoom:50%;" />
 
-**Clean Callback（返回的毁掉函数）：作用是清除上一次副作用遗留下来的状态。**
-
-
-
-useContext，
-
-useMemo/Callback，有对比返回值，useMemo是在渲染期间完成的 
-
-如果useMemo()里面是是一个函数，useCallback(fn)和它是一样的。
+**Clean Callback（返回的回调函数）：作用是清除上一次副作用遗留下来的状态。**
 
 
 
@@ -231,7 +251,23 @@ useEffect（），可以实现
 
 ####  类实例成员变量如何映射到Hooks？
 
+**通过useEffect来实现, 具体根据useEffect的第二个参数来实现**
 
+```javascript
+useEffect(()=>{ 
+	// 此处代码相当于  componentDidMount()函数
+	return ()=>{
+		// 此处代码相当于 componentWillUnmount()函数
+}},[])
+
+useEffect(()=>{ 
+		// 此处代码相当于 componentDidUpdate()函数
+}此处没有第二个参数)
+```
+
+
+
+![image-20210421011526858](/Users/yl/Library/Application Support/typora-user-images/image-20210421011526858.png)
 
 ## React setstate 原理
 
@@ -241,11 +277,17 @@ useEffect（），可以实现
 
 ## redux单项数据流（很重要，我还不太理解）
 
+Redux三大原则：
 
+* 单一数据源	
+  * 应用程序的 所有数据 都挂载在同一个对象下面（store），方便管理
+  * 代表 同一信息量 的数据只有一份，避免不同步
 
+* 状态不可变
+  * 修改数据的前后，数据源是 两个 不同对象。可以实现应用程序状态的保存（实现时间旅行的功能）。可避免不安规定直接修改数据的行为。
 
-
-
+* 纯函数修改数据
+  * 精确重现数据修改行为
 
 ## redux进行异步请求
 
@@ -282,7 +324,7 @@ export default createStore(
 
 1、 通过 actionCreater 函数创建 action 对象
 
-2、让这个新的 action 对象通过 reducer 函数返回新的数据，就是变更后的数据了。
+2、让这个新的 action 对象通过 reducer 函数返回新的state数据，就是变更后的数据了。
 
 **action.js**
 
@@ -308,7 +350,7 @@ export default createStore(
 
 渲染列表使用key
 
-自定义的事件、DOM事件及时销毁
+**自定义的事件、DOM事件及时销毁**
 
 合理使用异步组件，较大的组件使用异步加载
 
@@ -318,7 +360,22 @@ export default createStore(
 
 按需使用 & state层级尽量扁平化，不要嵌套过深。
 
+## 29、Vue性能优化方式  
 
+<font color=gree>**Vue 层面优化：**</font>
+
+* 合理使用v-show  和 v-if
+* 合理使用computed（有缓存，提高性能）
+* v-for 时加 key，以及避免和 v-if 同时使用（因为v-for 优先级更高，每次v-for，v-if都要重新计算一遍。这是对性能的一种浪费）
+* 自定义事件、DOM事件及时销毁（不销毁可能导致内存泄漏。可能页面就会越用越卡，越用越卡直到卡死为止）
+* 合理使用异步组件（针对比较大的组件）
+* 合理使用keep-alive（不需要重复渲染的地方，用keep-alive缓存下来，不要渲染）
+* data层级不要太深，尽量扁平化 
+
+<font color=blue>**webpack 层面优化：**</font>
+
+* 使用 vue-loader 在开发环境做模板编译（预编译）
+* 使用SSR
 
 ## React和Vue的区别
 
@@ -336,9 +393,7 @@ React是函数式编程，Vue是面向对象编程。
 
 事件不一样。React-SyntheticEvent，Vue-原生event
 
-
-
-
+状态更新方法不同
 
 # <font color=steelblue>webpack</font>
 
@@ -553,5 +608,14 @@ ES6Module是静态引入，**编译时**就引入
 
 CommJS是动态引入，**执行时**才会引入
 
+
+
+
+
+import 关键字引入模块，通过 exprot 关键字导出模块
+
+CommonJS的核心思想就是通过 require 方法来**同步加载**所要依赖的其他模块
+
 只有ES6 Module 才能静态分析，实现Tree-Shaking
 
+ 思考：在副作用里面，怎么判定一个 元素/组件 在本次渲染和上次渲染之间有过重新创建呢？
